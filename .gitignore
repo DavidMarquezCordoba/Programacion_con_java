@@ -1,6 +1,8 @@
 # Compiled class file
 *.class
-
+#Mac y VS Code
+.vscode
+.DS_Store
 # Log file
 *.log
 
