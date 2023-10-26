@@ -26,12 +26,21 @@ public class T03Ejercicio01 {
     System.out.println("Introduce otro número: ");
     num2 = teclado.nextInt();
 
+    //Cerramos teclado
+    teclado.close();
+
     int resultado = num1 * num2;
 
     System.out.println("********RESULTADO*******");
     System.out.println(num1+ " x "+ num2+" = "+resultado);
 
+
+
     
 
   }
 }
+
+
+//Dudas
+//Es necesario cerrar siempre el teclado?
