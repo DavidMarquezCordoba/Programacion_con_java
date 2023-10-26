@@ -36,3 +36,7 @@ public class T03Ejercicio05 {
 
   }
 }
+
+//DUDA
+
+//Por qué si pedimos un entero en base, y en altura pedimos un String, el programa no pide el estring por pantalla??
