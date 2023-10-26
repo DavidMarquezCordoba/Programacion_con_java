@@ -30,7 +30,6 @@ public class T03Ejercicio09 {
     System.out.printf("Escriba la altura de su cono (m): ");
 
     altura = teclado.nextDouble();
-    
 
     teclado.close();
 
