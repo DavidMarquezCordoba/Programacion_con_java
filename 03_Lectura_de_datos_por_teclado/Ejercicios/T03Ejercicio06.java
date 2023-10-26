@@ -21,7 +21,7 @@ public class T03Ejercicio06 {
     System.out.printf("Introduzca la base: ");
     base =teclado.nextInt();
     
-    System.out.printf("Introduzca la base: ");
+    System.out.printf("Introduzca la altura: ");
     altura = teclado.nextInt();
 
     System.out.println("-------------------------------------");
