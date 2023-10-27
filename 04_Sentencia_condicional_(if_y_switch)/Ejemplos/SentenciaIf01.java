@@ -30,7 +30,6 @@ public class SentenciaIf01 {
     } else {
       System.out.println("Inténtelo de nuevo :-(");
       System.out.println("");
-      
     }
   }
 }
