@@ -32,23 +32,23 @@ public class SentenciaIf02 {
 
     //Método 2
 
-    System.out.printf("MÉTODO 2\n");
-    System.out.printf("--------\n");
+    // System.out.printf("MÉTODO 2\n");
+    // System.out.printf("--------\n");
 
-    System.out.print("Escriba un número para averiguar si es positivo o negativo: ");
-    String numero = System.console().readLine();
+    // System.out.print("Escriba un número para averiguar si es positivo o negativo: ");
+    // String numero = System.console().readLine();
 
-    //Lo parseamos
-    int x = Integer.parseInt(numero);
+    // //Lo parseamos
+    // int x = Integer.parseInt(numero);
 
-    System.out.println("");
-    if (x>0) {
-      System.out.println("El número positivo");
-    } else {
-      System.out.println("El número negativo.");
-    }
+    // System.out.println("");
+    // if (x>0) {
+    //   System.out.println("El número positivo");
+    // } else {
+    //   System.out.println("El número negativo.");
+    // }
 
-    System.out.println(""); 
+    // System.out.println(""); 
 
   }
 }
