@@ -10,6 +10,8 @@ public class T02Ejercicio06 {
     double baseImponible = 1532.50;
     final double IVA = 1.21;
 
+    System.out.println("");
+
     System.out.println("Salida sin formatear");
     System.out.println("====================");
 

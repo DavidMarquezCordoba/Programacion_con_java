@@ -20,6 +20,7 @@ public class SentenciaIf02 {
     System.out.print("Escriba un número para averiguar si es positivo o negativo: ");
     num = teclado.nextInt();
     System.out.println("");
+    teclado.close();
 
     if (num>=0) {
       System.out.println("El número positivo");
