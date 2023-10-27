@@ -24,6 +24,7 @@ public class SentenciaIf01 {
 
     teclado.close();
 
+    //Comparación de cadenas de texto con el método .equals
     if (respuestaUsuario.equals(capitalEspana)) {
       System.out.println("Correcto, sabes mucho.");
       System.out.println("");
