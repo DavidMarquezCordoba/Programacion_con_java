@@ -49,7 +49,5 @@ public class SentenciaIf02 {
 
     System.out.println(""); 
 
-
-
   }
 }
