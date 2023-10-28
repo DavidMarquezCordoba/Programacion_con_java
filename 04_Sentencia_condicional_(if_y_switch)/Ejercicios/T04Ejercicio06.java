@@ -25,7 +25,7 @@ public class T04Ejercicio06 {
 
     tiempo = Math.sqrt((2*altura)/gravedad);
 
-    System.out.println("El objeto tardará en caer "+tiempo+ " segundos");
+    System.out.printf("El objeto tardará en caer %.2f segundos", tiempo);
     System.out.println("");
   }
 }
