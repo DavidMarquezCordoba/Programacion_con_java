@@ -15,9 +15,11 @@ public class T04Ejercicios07 {
     Scanner teclado = new Scanner(System.in);
 
     System.out.println("");
-    
+
     System.out.print("Indica la nota del primer examen: ");
     nota1 = teclado.nextDouble();
+
+
 
     if (nota1 >= 0 && nota1 <=10) {
       System.out.print("Indica la nota del segundo examen: ");
@@ -35,6 +37,7 @@ public class T04Ejercicios07 {
 
           if (media>=5) {
             System.out.println("Estás aprobado!!!");
+            
           } else {
             System.out.println("Estás suspenso. Inténtalo de nuevo.");
           }
