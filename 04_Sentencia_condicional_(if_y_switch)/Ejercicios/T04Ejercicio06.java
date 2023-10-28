@@ -27,5 +27,6 @@ public class T04Ejercicio06 {
 
     System.out.printf("El objeto tardará en caer %.2f segundos", tiempo);
     System.out.println("");
+    System.out.println("");
   }
 }
