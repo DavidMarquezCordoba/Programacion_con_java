@@ -137,9 +137,8 @@ if (bote >= 0 && bote <=10) {
 }
 
 if (bote >= 11 && bote <=22) {
-  System.out.println("Quizás exista el peligro de otra persona en su");
-  System.out.println("vida o en su mente, aunque seguramente será algo sin importancia. No");
-  System.out.println("bajes la guardia.");
+  System.out.println("Quizás exista el peligro de otra persona en su vida o en su mente,");
+  System.out.println("aunque seguramente será algo sin importancia. No bajes la guardia.");
   System.out.println("");
 }
 
@@ -149,11 +148,6 @@ if (bote >= 23 && bote <=30) {
   System.out.println("poco más y averigües que es lo que está pasando por su cabeza.");
   System.out.println("");
 }
-
-
-
-
-
 
   }
 }
