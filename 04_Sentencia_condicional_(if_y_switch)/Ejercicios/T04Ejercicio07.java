@@ -6,7 +6,7 @@
 
 import java.util.Scanner;
 
-public class T04Ejercicios07 {
+public class T04Ejercicio07 {
   public static void main(String[] args) {
     double nota1;
     double nota2;
