@@ -13,7 +13,7 @@ public class T04Ejercicio13 {
     int num2;
     int num3;
     int opcion;
-    
+
     Scanner teclado = new Scanner(System.in);
 
     System.out.println("");
@@ -112,13 +112,5 @@ public class T04Ejercicio13 {
       System.out.println("Opción no válida");
         break;
     }
-
-
-
-
-
-
-
-
   }
 }
