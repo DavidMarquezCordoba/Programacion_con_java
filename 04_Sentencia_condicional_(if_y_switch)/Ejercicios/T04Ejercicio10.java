@@ -31,11 +31,13 @@ public class T04Ejercicio10 {
 
     teclado.close();
 
+    //Controlamos los días y los meses válidos para filtar de manera más eficiente
     diaValido = (diaNacimiento >= 1 && diaNacimiento<=31);
     mesValido = (mesNacimiento >= 1 && mesNacimiento<= 12);
 
     if (diaValido && mesValido) {
 
+      //Una vez controlados los meses correctos controlaremos los días concretos para cada mez en concreto
       switch (mesNacimiento) {
 
         case 1:
@@ -187,25 +189,6 @@ public class T04Ejercicio10 {
       System.out.println("No existe esa fecha");
       System.out.println("");
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   }
 }
