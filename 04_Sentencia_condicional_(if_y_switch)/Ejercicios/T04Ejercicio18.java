@@ -23,7 +23,7 @@ public class T04Ejercicio18 {
     iNumero = teclado.nextInt();
     System.out.println("");
 
-    if (iNumero < 99999) {
+    if (iNumero <= 99999) {
       sNumero = Integer.toString(iNumero);
       valorPrimerDigito = sNumero.charAt(0);
       System.out.println("El primer dígito de "+iNumero+" es: "+valorPrimerDigito);
