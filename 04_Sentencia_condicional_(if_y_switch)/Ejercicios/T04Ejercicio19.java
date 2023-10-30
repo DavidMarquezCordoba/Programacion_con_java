@@ -21,7 +21,7 @@ public class T04Ejercicio19 {
     iNumero = teclado.nextInt();
     System.out.println("");
 
-    if (iNumero < 9999) {
+    if (iNumero <= 99999) {
       sNumero = Integer.toString(iNumero);
       valorIndex = sNumero.length();
 
