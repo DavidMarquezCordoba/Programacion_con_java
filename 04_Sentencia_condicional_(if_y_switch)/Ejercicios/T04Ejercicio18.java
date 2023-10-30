@@ -5,7 +5,7 @@ introducido por teclado. Se permiten números de hasta 5 cifras.
  * @author David Márquez Córdoba
  */
 
-// ESTE NO LO HE CONSEGUIDO
+
 
 import java.util.Scanner;
 
