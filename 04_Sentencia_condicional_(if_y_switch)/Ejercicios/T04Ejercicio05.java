@@ -24,7 +24,7 @@ public class T04Ejercicio05 {
 
     teclado.close();
 
-    if (a >= 1){
+    if ( (a >= 0.1) || (a <0) ){
       x = (b*(-1)/a);
 
       System.out.printf("x = %.2f", x);
