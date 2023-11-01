@@ -22,11 +22,17 @@ public class T04Ejercicio06 {
     System.out.print("Diga una altura: ");
     altura = teclado.nextDouble();
     teclado.close();
-
-    tiempo = Math.sqrt((2*altura)/gravedad);
-
-    System.out.printf("El objeto tardará en caer %.2f segundos", tiempo);
     System.out.println("");
-    System.out.println("");
+    
+    if (altura > 0) {
+      tiempo = Math.sqrt((2*altura)/gravedad);
+
+      System.out.printf("El objeto tardará en caer %.2f segundos", tiempo);
+      System.out.println("");
+      System.out.println("");      
+    } else {
+      System.out.println("Error. Introduce una altura válida");
+    }
+
   }
 }
