@@ -30,10 +30,6 @@ public class T04Ejercicio23 {
 
     String promo;
     
-    // int mitad;
-    // int menos5;
-    // int porc5;
-    
     Scanner teclado = new Scanner(System.in);
 
     System.out.println("");
