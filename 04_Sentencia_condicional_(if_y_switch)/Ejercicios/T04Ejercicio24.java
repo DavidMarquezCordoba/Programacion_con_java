@@ -132,6 +132,8 @@ public class T04Ejercicio24 {
             break;
         }
 
+        teclado.close();
+
         //Salida por pantalla
 
         System.out.println("+--------------------------------+");
