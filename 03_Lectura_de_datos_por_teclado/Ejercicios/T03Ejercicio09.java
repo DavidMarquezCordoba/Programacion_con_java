@@ -11,7 +11,7 @@ public class T03Ejercicio09 {
   public static void main(String[] args) {
     double radio;
     double altura;
-    double pi = Math.PI;
+    final double PI = Math.PI;
     double radioAlCubo;
 
     Scanner teclado = new Scanner(System.in);
@@ -36,7 +36,7 @@ public class T03Ejercicio09 {
     //LOGICA
 
     radioAlCubo = Math.pow(radio, 2);
-    double volumen = (pi*radioAlCubo*altura)/3;
+    double volumen = (PI*radioAlCubo*altura)/3;
 
     System.out.println("");
     System.out.printf("Resultado es %.2f m3", volumen);
