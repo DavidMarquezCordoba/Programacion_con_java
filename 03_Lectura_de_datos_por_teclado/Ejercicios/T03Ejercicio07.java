@@ -26,12 +26,12 @@ public class T03Ejercicio07 {
     ivaDeBaseImponible = baseImponible * 0.21;
     precioTotalConIva = baseImponible * 1.21;
 
-    System.out.println("-------------------------");
-    System.out.println("         FACTURA        ");
-    System.out.println("-------------------------");
-    System.out.printf("Base Imponible %8.2f€ \n", baseImponible);
-    System.out.printf("IVA 21%%       %8.2f€ \n", ivaDeBaseImponible);
-    System.out.printf("Total          %8.2f€ \n", precioTotalConIva);
-    System.out.println("-------------------------");
+    System.out.println("+------------------------+");
+    System.out.println("|        FACTURA         |");
+    System.out.println("+------------------------+");
+    System.out.printf("|Base Imponible %6.2f € |\n", baseImponible);
+    System.out.printf("|IVA 21%%       %6.2f €  |\n", ivaDeBaseImponible);
+    System.out.printf("|Total          %6.2f € |\n", precioTotalConIva);
+    System.out.println("+------------------------+");
   }
 }
