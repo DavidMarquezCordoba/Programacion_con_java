@@ -23,10 +23,13 @@ public class T04Ejercicio26 {
     boolean bDiaSemanaValido = false;
     char cTarjetaDescuento = ' ';
     boolean bTarjetaDescuentoValida = false;
-    int precioBaseTicket = 8;
-    int precioBaseMiercoles = 5;
+    double precioBaseTicket = 8;
+    double precioBaseMiercoles = 5;
+    double descuento = 0.10;
 
-    int precioBaseJuevesPareja = 11;
+    double precioBaseJuevesPareja = 11;
+
+    double total =0;
 
     System.out.println("");
     System.out.println("Venta de entradas Cine Turin");
@@ -51,39 +54,58 @@ public class T04Ejercicio26 {
 
           System.out.println("Aquí tiene sus entradas. Gracias por su compra.");
           
-          if (cTarjetaDescuento == 's') {
-            switch (diaSemana) {
+          switch (diaSemana) {
 
-              case "lunes", "martes", "viernes", "sabado", "domingo":
-                double totalDineroNumEntradas = numEntradas * precioBaseTicket;
+            case "lunes", "martes", "viernes", "sabado", "domingo":
+              // double totalDineroNumEntradas = numEntradas * precioBaseTicket;
+              total = numEntradas * precioBaseTicket;
 
-                System.out.printf("Entradas individuales        %-5d", numEntradas);
-                break;
+              System.out.printf("Entradas individuales           %5d\n", numEntradas);
+              System.out.printf("Precio por entrada individual   %5.2f\n", precioBaseTicket);
 
-              case "miercoles":
+              break;
 
-                System.out.printf("Entradas individuales        %-5d", numEntradas);
-                break;
+            case "miercoles":
+              total = numEntradas * precioBaseMiercoles;
+              System.out.printf("Entradas individuales           %5d\n", numEntradas);
+              System.out.printf("Precio por entrada individual   %5.2f\n", precioBaseMiercoles);
+              break;
 
-              case "jueves":
+            case "jueves":
 
-                System.out.printf("Entradas individuales        %-5d", numEntradas);
-                System.out.printf("Precio por entrada de pareja        %-5d", numEntradas);
-                break;
+              if (numEntradas%2==0) {
+                int numeroParejas = numEntradas/2;
+                total = numeroParejas * precioBaseJuevesPareja;
+                System.out.printf("Entradas parejas              %5d\n", numeroParejas);
+                System.out.printf("Precio por entrada de pareja  %5.2f\n", precioBaseJuevesPareja);
+              } else {
+                
+                int calculoEntradasParejas = numEntradas -1;
+                total = ((calculoEntradasParejas/2) * precioBaseJuevesPareja) + precioBaseTicket;
+                System.out.printf("Entradas parejas               %5d\n", (calculoEntradasParejas/2));
+                System.out.printf("Precio por entrada de pareja   %5.2f\n", precioBaseJuevesPareja);
+                System.out.printf("Entradas individuales          1\n");
+                System.out.printf("Precio por entrada individual  %5.2f\n", precioBaseTicket);
+              }
+              break;
+          } 
 
-            }            
-          } else {
-            System.out.println("Tarjeta descuento -> NO");
-          }
+          System.out.printf("Total                           %5.2f\n", total);   
           
 
+          if (cTarjetaDescuento == 's') {
+            descuento = total * descuento;
+            // double totalConDescuento = total * descuento;
+            System.out.printf("Descuento                         %5.2f\n", descuento);
+            } else{
+              descuento = 0;
+              System.out.printf("Descuento                       %5.2f\n", descuento);
+            }
 
+          double aPagar = total - descuento;
 
-
-
-
-
-
+          System.out.printf("A pagar                         %5.2f\n", aPagar); 
+          System.out.println("");
 
         } else {
           System.out.println("Introduce una opción válida");
@@ -96,7 +118,7 @@ public class T04Ejercicio26 {
       System.out.println("Introduce un número válido");
     }
     
-    
+    teclado.close();
 
   }
 }
