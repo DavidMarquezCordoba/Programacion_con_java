@@ -8,13 +8,18 @@ de Java (con un solo println) ¿es posible?
 
 public class T02Ejercicio07 {
   public static void main(String[] args) {
-    char letra1 = 'D';
+    String letra1 = "1";
     char letra2 = 'a';
     char letra3 = 'v';
     char letra4 = 'i';
     char letra5 = 'd';
+    
 
     String apellido = "Márquez";
+
+    int parseo = Integer.parseInt(letra1);
+
+    System.out.println(parseo);
 
     //Si se hiciera como siempre...saldría la suma de cada uno de los valores asignados a cada letra en el código ASCII
     System.out.println(letra1+letra2+letra3+letra4+letra5+" "+ apellido);
