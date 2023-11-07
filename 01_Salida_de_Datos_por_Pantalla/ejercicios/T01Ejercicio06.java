@@ -11,7 +11,7 @@ Ejemplo:
  * @author David Márquez Córdoba
  */
 
-public class T01Ejercicio6 {
+public class T01Ejercicio06 {
   public static void main(String[] args) {
     System.out.printf("%8s\n", "*");
     System.out.printf("%9s\n", "***");
