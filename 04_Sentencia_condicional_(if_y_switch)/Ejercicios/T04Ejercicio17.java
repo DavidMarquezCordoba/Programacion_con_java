@@ -10,13 +10,13 @@ import java.util.Scanner;
 public class T04Ejercicio17 {
   public static void main(String[] args) {
     
-    int numero;
+    double numero;
 
     Scanner teclado = new Scanner(System.in);
 
     System.out.println("");
     System.out.print("Diga un número entero: ");
-    numero = teclado.nextInt();
+    numero = teclado.nextDouble();
     System.out.println("");
     
     teclado.close();
