@@ -12,7 +12,7 @@ public class T04Ejercicio06 {
     
     double altura;
     double tiempo;
-    final double gravedad= 9.81;
+    final double GRAVEDAD= 9.81;
 
     Scanner teclado = new Scanner(System.in);
 
@@ -25,7 +25,7 @@ public class T04Ejercicio06 {
     System.out.println("");
     
     if (altura > 0) {
-      tiempo = Math.sqrt((2*altura)/gravedad);
+      tiempo = Math.sqrt((2*altura)/GRAVEDAD);
 
       System.out.printf("El objeto tardará en caer %.2f segundos", tiempo);
       System.out.println("");
