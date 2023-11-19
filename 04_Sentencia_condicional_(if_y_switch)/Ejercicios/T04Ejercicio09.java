@@ -27,6 +27,7 @@ public class T04Ejercicio09 {
 
     teclado.close();
 
+    //Añadir discriminantes
     xSub1 = ((b*(-1)) + Math.sqrt((Math.pow(b, 2) - (4*a*c))))/2*a;
     xSub2 = ((b*(-1)) - Math.sqrt((Math.pow(b, 2) - (4*a*c))))/2*a;
 
