@@ -13,13 +13,13 @@ import java.util.Scanner;
 public class T05Ejercicio15 {
   public static void main(String[] args) {
     
-    double base;
+    int base;
     int exponente;
 
     Scanner teclado = new Scanner(System.in);
 
     System.out.printf("Introduce una base: ");
-    base = teclado.nextDouble();
+    base = teclado.nextInt();
 
     do {
       System.out.printf("Introduce un exponente: ");
