@@ -18,8 +18,6 @@ public class T04Ejercicio29 {
     String desayunoConPitufo = "";
     double precioDesayuno = 0;
     double precioDesayunoConPitufo = 0;
-    // double precioAceite = 0;
-    // double precioTortilla = 0;
 
     String bebida = "";
     double precioBebida=0;
