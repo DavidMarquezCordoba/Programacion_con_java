@@ -15,6 +15,8 @@ public class T05Ejercicio15 {
     
     int base;
     int exponente;
+    int exponenteFinal;
+    int potencia;
 
     Scanner teclado = new Scanner(System.in);
 
@@ -23,12 +25,21 @@ public class T05Ejercicio15 {
 
     do {
       System.out.printf("Introduce un exponente: ");
-      exponente = teclado.nextInt();
-    } while (exponente <=0);
+      exponenteFinal = teclado.nextInt();
+    } while (exponenteFinal <=0);
     
-    for (int i = exponente-4; i <= exponente; i++) {
-      System.out.printf(" %d^%d", base, i);
+    for (int i = 1; i <= exponenteFinal; i++) {
+
+      potencia = 1;
+      exponente = i;
+
+      for (int j = 0; j < exponente; j++) {
+        potencia = potencia * base; // lo mismo que potencia *= base
+      }
+      System.out.printf(" %d ^ %d = %d\n", base, i, potencia);
     }
     teclado.close();
   }
 }
+
+//No lo tengo muy claro aún...repasar.
