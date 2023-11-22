@@ -13,7 +13,7 @@ public class T05Ejercicio22 {
     // 1º Ajustamos rango permitido (de 2 a 10)
     // i => número
     // j => módulo de..
-    for (int i = 2; i <= 10; i++) {
+    for (int i = 2; i <= 100; i++) {
 
       esPrimo = true;
 
