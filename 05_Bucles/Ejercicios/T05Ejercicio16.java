@@ -20,6 +20,11 @@ public class T05Ejercicio16 {
     num = teclado.nextInt();
 
     //Empezams desde 2 porque 1 sabemos que es primo y siempre va a dar el resto 0
+
+    //Aclaración:
+    //Comprobamos si el núm es primo entre un rango específico
+    //  - Comprobamos cada número del 0 al num introducido para descartar que su resto sea 0, 
+    //ya que si es 0 significa que es DIVISIBLE y solo debe ser divisible entre 1 y el mismo.
     for (int i = 2; i < num; i++) {
       if ((num % i == 0)) {
         esPrimo=false;
