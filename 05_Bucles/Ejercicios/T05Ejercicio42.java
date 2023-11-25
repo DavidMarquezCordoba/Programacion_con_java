@@ -21,7 +21,7 @@ public class T05Ejercicio42 {
       numeroIntroducido = teclado.nextInt();
     } while (numeroIntroducido<0);
     
-    for (int i = numeroIntroducido; i < numeroIntroducido+25; i++) {
+    for (int i = numeroIntroducido; i < numeroIntroducido+5; i++) {
       System.out.printf("%d ", i);
 
       boolean esPrimo = true;
