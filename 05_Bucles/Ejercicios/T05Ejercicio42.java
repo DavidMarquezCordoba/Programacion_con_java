@@ -12,7 +12,7 @@ public class T05Ejercicio42 {
   public static void main(String[] args) {
     
     int numeroIntroducido;
-    String esPrimo = "";
+    
 
     Scanner teclado = new Scanner(System.in);
 
@@ -21,19 +21,26 @@ public class T05Ejercicio42 {
       numeroIntroducido = teclado.nextInt();
     } while (numeroIntroducido<0);
     
-    for (int i = numeroIntroducido+1; i <= numeroIntroducido+5; i++) {
+    for (int i = numeroIntroducido; i < numeroIntroducido+25; i++) {
       System.out.printf("%d ", i);
 
-      esPrimo = " es primo.";
+      boolean esPrimo = true;
 
-      for (int j = 2; j <= i/2; j++) {
+      for (int j = 2; j < i; j++) {
 
         if (i%j==0) {
-          esPrimo = " no es primo";
+          esPrimo = false;
         }
         
       }
-      System.out.printf("%s \n", esPrimo);
+
+      if (esPrimo) {
+        System.out.printf(" es primo\n");
+      } else {
+        System.out.printf(" no es primo\n");
+      }
+
+      // System.out.printf("%s \n", esPrimo);
     }
 
     teclado.close();
