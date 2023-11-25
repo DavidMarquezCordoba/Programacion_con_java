@@ -12,7 +12,6 @@ public class T05Ejercicio42 {
   public static void main(String[] args) {
     
     int numeroIntroducido;
-    // boolean esPrimo=false;
     String esPrimo = "";
 
     Scanner teclado = new Scanner(System.in);
@@ -31,7 +30,7 @@ public class T05Ejercicio42 {
 
         if (i%j==0) {
           esPrimo = " no es primo";
-        } 
+        }
         
       }
       System.out.printf("%s \n", esPrimo);
@@ -40,6 +39,3 @@ public class T05Ejercicio42 {
     teclado.close();
   }
 }
-
-
-//REPASAR
