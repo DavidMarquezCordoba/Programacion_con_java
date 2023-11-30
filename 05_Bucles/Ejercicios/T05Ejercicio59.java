@@ -12,31 +12,36 @@ public class T05Ejercicio59 {
   public static void main(String[] args) {
     
     int alturaArbol;
-    int copiaAlturaArbol;
 
     //Controla el nivel del medio (El triángulo del árbol)
     int nivel1 = 2;
-    //Controla el nivel desde dónde empiezan a sumar +2 espacios
-    int nivel2 = 3;
-    
-    int espaciosInterior = 0;
+
     int numeroEspacios = 1;
 
     Scanner teclado = new Scanner(System.in);
 
     System.out.print("Por favor, introduzca la altura del árbol: ");
     alturaArbol = teclado.nextInt();
-    copiaAlturaArbol = alturaArbol;
 
-    for (int i = 0; i < alturaArbol; i++) {
+    //Espacios por delante
+    for (int j = 0; j < (alturaArbol-3)+1; j++) {
+      System.out.print(" ");
+    }    
 
-      //Espacios por delante
-      for (int j = 0; j < (alturaArbol-3)-i; j++) {
-        System.out.print(" ");
-      }
+    //Pintamos estrella
+    System.out.print("*");
+    System.out.println("");
 
-      System.out.print("^");
-      System.out.println("");
+    //Espacios por delante
+    for (int j = 0; j < (alturaArbol-3)+1; j++) {
+      System.out.print(" ");
+    }    
+
+    //Pintamos cúspide
+    System.out.print("^");
+    System.out.println("");
+
+    for (int i = 0; i < alturaArbol-3; i++) {
 
       //Espacios por delante
       for (int j = 0; j < (alturaArbol-3)-i; j++) {
@@ -61,7 +66,6 @@ public class T05Ejercicio59 {
           for (int j = 2; j < numeroEspacios+2; j++) {
             System.out.print(" ");
           }
-          
         }
         numeroEspacios+=2;
         System.out.print("^");
@@ -72,18 +76,16 @@ public class T05Ejercicio59 {
           System.out.print("^");
         }
       }
-
       System.out.println("");
-
-      
-
-
-
       }
-      System.out.println("");   
       
-        
+    //Espacios por delante
+    for (int j = 0; j < (alturaArbol-3)+1; j++) {
+      System.out.print(" ");
+    }    
 
+    System.out.print("Y");
+    System.out.println("");
 
     teclado.close();
   }
@@ -102,43 +104,4 @@ public class T05Ejercicio59 {
 // ^^^^^^^^^^^^^^^
 //        Y
 
-    // for (int i = 0; i < alturaArbol; i++) {
-
-    //   //Espacios por delante
-    //   for (int j = 0; j < (alturaArbol-3)-i; j++) {
-    //     System.out.print(" ");
-    //   }
-
-    //   nivel1++;
-
-    //   //Comprobamos si está en el medio, si lo está, pinta caracter
-    //   if (nivel1<(alturaArbol)) {
-    //     System.out.print("^");
-
-    //     //Pintamos espacios interiores
-    //     if (numeroEspacios == 1) {
-    //       System.out.print(" ");
-    //     } else {
-          
-    //       for (int j = 0; j < numeroEspacios+2; j++) {
-    //         System.out.print(" ");
-    //       }
-
-          
-    //     }
-    //     numeroEspacios++;
-    //     System.out.print("^");
-    //   }
-
-    //   System.out.println("");
-
-      
-
-
-
-    //   }
-    //   System.out.println("");   
-      
-    
-    
 
