@@ -59,6 +59,8 @@ public class T05Ejercicio43 {
       numeroIzquierda = numeroVolteado % 10;
       //Vamos actualizando valor
       numeroVolteado = numeroVolteado/10;
+      //pintamos número poco a poco
+      
     }
 
     System.out.println("El número de la parte izquierda es "+numeroIzquierda);
