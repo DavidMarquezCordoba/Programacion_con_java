@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -18,53 +19,53 @@ public class T05Ejercicio61 {
 
     Scanner teclado = new Scanner(System.in);
 
-    System.out.print("Introduzca la altura de la V (un número mayor o igual a 3): ");
-    altura = teclado.nextInt();
+    try {
+      System.out.print("Introduzca la altura de la V (un número mayor o igual a 3): ");
+      altura = teclado.nextInt();
 
-    if (altura >=3) {
-      nivel1 = altura;
-      nivel2 = altura;
+      if (altura >=3) {
+        nivel1 = altura;
+        nivel2 = altura;
 
-      System.out.println("");
-      for (int i = 0; i < altura; i++) {
+        System.out.println("");
+        for (int i = 0; i < altura; i++) {
 
-        //Espacios por delante
-        for (int j = 0; j < altura-nivel1; j++) {
-          System.out.print(" ");
-          
-        }
+          //Espacios por delante
+          for (int j = 0; j < altura-nivel1; j++) {
+            System.out.print(" ");
+            
+          }
 
-        //Asteriscos izq
-        for (int j = 0; j < 3; j++) {
-          System.out.print("*");
-        }
+          //Asteriscos izq
+          for (int j = 0; j < 3; j++) {
+            System.out.print("*");
+          }
 
-        //Espacios intermedios
-        for (int j = 0; j < (nivel2*2)-2; j++) {
-          System.out.print(" ");
-        }
+          //Espacios intermedios
+          for (int j = 0; j < (nivel2*2)-2; j++) {
+            System.out.print(" ");
+          }
 
-        //Espacios intermedio-dcha
-        // for (int j = 0; j < nivel2-1; j++) {
-          
-        // }
+          //Asteriscos dcha
+          for (int j = 0; j < 3; j++) {
+            System.out.print("*");
+          }
 
-        //Asteriscos dcha
-        for (int j = 0; j < 3; j++) {
-          System.out.print("*");
+          System.out.println("");
+          nivel1--;
+          nivel2--;
         }
 
         System.out.println("");
-        nivel1--;
-        nivel2--;
-      }
 
-      System.out.println("");
-
-      teclado.close();      
-    } else {
-      System.out.println("La altura debe ser mayor o igual a 3.");
+        teclado.close();      
+      } else {
+        System.out.println("La altura debe ser mayor o igual a 3.");
+      }      
+    } catch (InputMismatchException e) {
+      System.out.println("Por favor, introduzca solo números. Letras no son admitidas");
     }
+
 
   }
 }
