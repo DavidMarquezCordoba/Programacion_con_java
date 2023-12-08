@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * 
  * Realiza un programa que diga los dígitos que aparecen y los que no aparecen
@@ -18,12 +16,15 @@ Dígitos que no aparecen: 1 2 3 4 5 8 9
  * @author David Márquez Córdoba
  */
 
+import java.util.Scanner; 
+
 public class T05Ejercicio48 {
   public static void main(String[] args) {
     
     Scanner teclado = new Scanner(System.in);
 
     long numIntroducido = 0;
+    
     long numVolteado = 0;
     long ultimoDigito = 0;
 
@@ -41,9 +42,12 @@ public class T05Ejercicio48 {
     System.out.print("Introduzca un número entero:  ");
     numIntroducido = teclado.nextLong();
 
+    
+
     do {
-      numVolteado = (numIntroducido%10) + (numVolteado*10);
-      numIntroducido/=10;
+      ultimoDigito = numIntroducido % 10;
+      numVolteado = (numVolteado * 10) + ultimoDigito;
+      numIntroducido /= 10;
     } while (numIntroducido>0);
     
     do {
