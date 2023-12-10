@@ -90,7 +90,7 @@ public class T05Ejercicio51 {
       System.out.println("Mensaje de error - "+e.getMessage());
     } finally {
       System.out.println("");
-      System.out.println("Vuelva a intentarlo más tarde");
+      System.out.println("Hasta luego!");
       System.out.println("");
     }
   }
