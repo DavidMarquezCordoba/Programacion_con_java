@@ -52,5 +52,6 @@ public class T05Ejercicio48vLuis {
         System.out.print(i + " ");
       }
     }
+    s.close();
   }
 }
