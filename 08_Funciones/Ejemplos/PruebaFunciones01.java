@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+import matematicas.Area;
 import matematicas.Geometria;
 import matematicas.Varias;
 
@@ -73,6 +75,24 @@ public class PruebaFunciones01 {
     r = teclado.nextDouble();
 
     System.out.printf("La longitud de la circunferencia con longitud %.2f es %.2f m\n", r, matematicas.Geometria.longitudCircunferencia(r));
+
+    ///////////////////////////////////////// PRUEBA ÁREA  ////////////////////////////////////////////////
+
+    System.out.println("");
+    System.out.println("PRUEBA ÁREA DE CUADRADO");
+    System.out.println("========================");
+    int base;
+    int altura;
+
+    System.out.print("Introduce la base: ");
+    base = teclado.nextInt();
+    System.out.print("Introduce la altura: ");
+    altura = teclado.nextInt();
+
+    System.out.printf("El área del cuadrado es %.2f", Area.areaCuadrado(base, altura));
+
+
+
 
     teclado.close();
   }
