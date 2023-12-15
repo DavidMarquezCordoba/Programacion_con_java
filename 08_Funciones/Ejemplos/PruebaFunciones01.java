@@ -5,7 +5,7 @@ import matematicas.Geometria;
 import matematicas.Varias;
 
 /**
- * Explica tu código aquí
+ * Prueba de diversas funciones
  * 
  * @author David Márquez Córdoba
  */
@@ -69,7 +69,7 @@ public class PruebaFunciones01 {
     System.out.println("====================================");
     System.out.println("");
 
-    //Variable radio necesaria para calcular el volumen declarada en la prueba anterior
+    // Variable radio necesaria para calcular el volumen declarada en la prueba anterior
 
     System.out.printf("Diga el radio de una circunferencia para calcular su longitud: ");
     r = teclado.nextDouble();
@@ -91,9 +91,53 @@ public class PruebaFunciones01 {
 
     System.out.printf("El área del cuadrado es %.2f", Area.areaCuadrado(base, altura));
 
+    ///////////////////////////////////////// VOLTEAR NÚMERO  LONG////////////////////////////////////////////////
+
+    long num = 0;
+
+    System.out.print("Introduce un número para voltearlo: ");
+    num = teclado.nextLong();
+
+    System.out.print("El número volteado es: "+ Varias.voltearNumeros(num));
 
 
+      ///////////////////////////////////////// VOLTEAR NÚMERO  INT ////////////////////////////////////////////////
 
+    System.out.print("Introduce un número para voltearlo: ");
+    num = teclado.nextInt();
+
+    System.out.print("El número volteado es: "+ Varias.voltearNumeros(num));
+
+      ///////////////////////////////////////// Es Capicúa ? ////////////////////////////////////////////////
+
+    System.out.println("Introduce un número: ");
+    int numIn = teclado.nextInt();
+
+    if (Varias.esCapicua(numIn)) {
+      System.out.println("Es capicúa");
+    } else {
+      System.out.println("No es capicúo");
+    }
+
+    ///////////////////////////////////////// Es Capicúa ? ////////////////////////////////////////////////
+
+    System.out.println("Introduce un número: ");
+    int numInt = teclado.nextInt();
+
+    System.out.println("El siguiente número primero de "+numInt+ " es "+ Varias.siguientePrimo(numInt));
+
+    ///////////////////////////////////////// SON AMIGOS ? ////////////////////////////////////////////////
+
+    System.out.print("Introduce un número para averiguar si son amigos: ");
+    int x = teclado.nextInt();
+    System.out.print("Introduce otro número para averiguar si son amigos: ");
+    int y = teclado.nextInt();
+    
+    if (Varias.numerosAmigos(x, y)) {
+      System.out.println("Son amigos");
+    } else {
+      System.out.println("No son amigos");
+    }
     teclado.close();
   }
 }
