@@ -162,4 +162,62 @@ public class Varias {
     }
     return false;
   }
+
+  /////////////////////////HECHOS POR MI//////////////////////////////////
+
+  /**
+   * Función que suma los 100 números siguientes al introducido
+   * 
+   * @param x Número introducido por pantalla
+   * @return el valor de la suma de los 100 números siguientes al introducido
+   */
+
+  public static long sumaCienNumerosSiguientes (int x){
+
+    long bote = 0;
+    for (int i = x+1; i <= (x+100); i++) {
+      bote+=i;
+    }
+    return bote;
+  }
+
+
+  /**
+   * Función que pinta pirámides del tamaño que quiera el usuario
+   * 
+   * @param x altura introducida por teclado
+   * @return pirámide con la altura introducida
+   */
+
+  public static void piramide (int x){
+
+    int nivel=1;
+    int asteriscos = 1;
+
+    while (nivel <= x) {
+
+      for (int i = 1; i <= x-nivel; i++) {
+        System.out.print(" ");
+      }
+
+      if (nivel==1) {
+
+        System.out.print("*");
+
+      } else {
+
+        System.out.print("*");
+
+        for (int i = 1; i < asteriscos; i++) {
+          System.out.print("*");
+        }
+      }
+
+      System.out.println("");
+      asteriscos+=2;
+      nivel++;
+      
+    }
+
+  }
 }
