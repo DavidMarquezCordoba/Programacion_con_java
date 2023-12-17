@@ -159,16 +159,22 @@ Se empieza contando por el 0 y de izquierda a derecha.
    * @return Posición del número dentro de un número entero 
    */
 
-  // public static int posicionDeDigito (int numEntero, int digito){
+  public static int posicionDeDigito (int numEntero, int digito){
 
-  //   String cadenaEntera = Integer.toString(numEntero);
-  //   String sDigito = Integer.toString(digito);
-    
-  //   for (int i = 1; i < cadenaEntera.length(); i++) {
-  //     if (cadenaEntera.charAt(i)==digito) {
-  //       return i;
-  //     } 
-  //   }
-  // }
+    long numeroDigitos = cuentaDigitos(numEntero);
+    long numVolteado = voltea(numEntero);
+    int ultimoDigito = 0;
+
+    for (int i = 1; i <= numeroDigitos; i++) {
+      ultimoDigito = (int)numVolteado%10;
+
+      if (ultimoDigito == digito) {
+        return i;
+      }
+      numVolteado/=10;
+    }
+
+    return -1;
+  }
 
 }
