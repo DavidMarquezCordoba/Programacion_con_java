@@ -14,7 +14,7 @@ public class T08Ejercicio05 {
     Scanner teclado = new Scanner(System.in);
 
     System.out.println("Introduce un número para ver cuántos digitos tiene: ");
-    int numeroIntroducido = teclado.nextInt();
+    long numeroIntroducido = teclado.nextLong();
 
     System.out.printf("El número %d tiene %d dígitos", numeroIntroducido, utilidades.cuentaDigitos(numeroIntroducido));
     teclado.close();
