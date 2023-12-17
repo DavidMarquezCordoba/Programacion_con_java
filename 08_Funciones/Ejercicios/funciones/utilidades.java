@@ -48,7 +48,21 @@ public class utilidades {
     return true;
   }
 
+  /**
+   * Devuelve el siguiente número primo partiendo del número introducido
+   * 
+   * @param x int valor del número introducido por teclado
+   * @return devuelve el siguiente número primo
+   */
 
+  public static int siguientePrimo (int x){
+
+    do {
+      x++;
+    } while (esPrimo(x)==false);
+
+    return x;
+  }
 
 
 
