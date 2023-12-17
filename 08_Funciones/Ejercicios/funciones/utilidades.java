@@ -194,4 +194,20 @@ derecha).
 
     return numeroEntero;
   }
+
+  /**
+   * quitaPorDelante: Le quita a un número n dígitos por delante (por la
+izquierda).
+   * 
+   * @param x tipo long, número introducido por teclado para recortar.
+   * @param y tipo int , cantidad de dígitos a recortar.
+   * @return long número recortado por delante.
+   */
+
+  public static long quitaPorDelante (long x, int y){
+
+    long numVolteado = voltea(x);
+    long numRecortado = quitaPorDetras(numVolteado, y);
+    return voltea(numRecortado);
+  }
 }
