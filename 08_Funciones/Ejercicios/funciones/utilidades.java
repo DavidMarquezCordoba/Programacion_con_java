@@ -177,4 +177,21 @@ Se empieza contando por el 0 y de izquierda a derecha.
     return -1;
   }
 
+  /**
+   * Función quitaPorDetras: Le quita a un número n dígitos por detrás (por la
+derecha).
+   * 
+   * @param numEntero número que introducimos por teclado
+   * @param quitaDigitos cantidad que dígitos que vamos a recortar a numEntero
+   * @return el número ya recortado
+   */
+
+  public static long quitaPorDetras (long numeroEntero, int quitaDigitos){
+
+    for (int i = 0; i < quitaDigitos; i++) {
+      numeroEntero/=10;
+    }
+
+    return numeroEntero;
+  }
 }
