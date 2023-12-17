@@ -4,6 +4,14 @@ public class utilidades {
 
   //AQUÍ VAN TODAS LAS FUNCIONES NECESARIAS PARA LA RESOLUCIÓN DE EJERCICIOS DEL TEMA 8 
 
+  /**
+   * Devuelve true o false si un número introducido es capicúa
+   * 
+   * @param x Número introducido por teclado de tipo long
+   * @return true si es capicúa o false si no es capicúa
+   * 
+   */
+
   public static boolean esCapicua (long x){
 
     long numOriginal = x;
@@ -21,4 +29,33 @@ public class utilidades {
       return false;
     }
   }
+
+
+  /**
+   * Función que comprueba si un número es primo o no
+   * 
+   * @param x número introducido de tipo int
+   * @return true si es primo o false si no lo es
+   */
+  public static boolean esPrimo(int x){
+
+    for (int i = 2; i < x; i++) {
+      if ((x%i)==0) {
+        return false;
+      } 
+    }
+
+    return true;
+  }
+
+
+
+
+
+
+
+
+
+
+
 }
