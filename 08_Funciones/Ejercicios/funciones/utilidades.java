@@ -80,16 +80,15 @@ public class utilidades {
   /**
    * Función que cuenta el número de dígitos de un número entero.
    * 
-   * @param x
+   * @param x número introducido por teclado
    * @return el número de dígitos de un número
    */
 
-  public static int cuentaDigitos (int x){
+  public static long cuentaDigitos (long x){
 
     int contador = 0;
 
     while (x>0) {
-      int ultimoDigito= x%10;
       x/=10;
       contador++;
     }
@@ -97,16 +96,28 @@ public class utilidades {
   }
 
 
-
   /**
-   * Explica tu función aquí
+   * Función voltea: Le da la vuelta a un número.
    * 
-   * @param x
-   * @return xyz
-   * @return xyz
+   * @param x tipo long, número que introducimos por pantalla.
+   * @return número volteado
    */
 
+  public static long voltea(long x){
+    int ultimoDigito = 0;
+    long numVolteado = 0;
 
+    if ( x < 0) {
+      return voltea(-x);
+    }
+    while (x>0) {
+      ultimoDigito = (int) x%10;
+      numVolteado = (numVolteado*10)+ultimoDigito;
+      x/=10;
+    }
+
+    return numVolteado;
+  }
 
   /**
    * Explica tu función aquí
