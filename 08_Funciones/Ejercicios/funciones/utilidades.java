@@ -120,14 +120,35 @@ public class utilidades {
   }
 
   /**
-   * Explica tu función aquí
+   * Función digitoN: Devuelve el dígito que está en la posición n de un número entero.
+Se empieza contando por el 0 y de izquierda a derecha.
    * 
-   * @param x
-   * @return xyz
-   * @return xyz
+   * @param x long número entero
+   * @param y int posición
+   * @return digito, el dígito que ocupa la posición y de x
    */
 
+  public static int digitoN(long x, int y){
 
+    long numVolteado = 0;
+    int ultimoDigito = 0;
+    long numRestaurado = 0;
+
+    while (x>0) {
+      ultimoDigito = (int)x%10;
+      numVolteado = numVolteado*10 + ultimoDigito;
+      x/=10;
+    }
+
+    for (int i = 0; i < y; i++) {
+      ultimoDigito = (int)numVolteado%10;
+      numRestaurado = numRestaurado*10 + ultimoDigito;
+      numVolteado/=10;
+    }
+
+    return ultimoDigito;
+
+  }
 
   
   /**
