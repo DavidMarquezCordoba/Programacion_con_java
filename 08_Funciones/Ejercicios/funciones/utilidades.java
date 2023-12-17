@@ -64,9 +64,18 @@ public class utilidades {
     return x;
   }
 
+  /**
+   * Función para calcular la potencia de base elevado a exponente.
+   * 
+   * @param x int de base
+   * @param y int de exponente
+   * @return La potencia de base elevado a exponente
+   */
 
+  public static double potencia(int x, int y){
 
-
+    return Math.pow(x, y);
+  }
 
 
 
