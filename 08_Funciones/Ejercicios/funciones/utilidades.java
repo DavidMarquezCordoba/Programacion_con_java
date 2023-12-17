@@ -77,8 +77,66 @@ public class utilidades {
     return Math.pow(x, y);
   }
 
+  /**
+   * Función que cuenta el número de dígitos de un número entero.
+   * 
+   * @param x
+   * @return el número de dígitos de un número
+   */
+
+  public static int cuentaDigitos (int x){
+
+    int contador = 0;
+
+    while (x>0) {
+      int ultimoDigito= x%10;
+      x/=10;
+      contador++;
+    }
+    return contador;
+  }
 
 
 
+  /**
+   * Explica tu función aquí
+   * 
+   * @param x
+   * @return xyz
+   * @return xyz
+   */
+
+
+
+  /**
+   * Explica tu función aquí
+   * 
+   * @param x
+   * @return xyz
+   * @return xyz
+   */
+
+
+
+  
+  /**
+   * Da la posición de la primera ocurrencia de un dígito dentro de un número entero. Si no lo encuentra devuelve -1
+   * 
+   * @param numEntero valor de un número entero
+   * @param digito dígito a buscar dentro de numEntero
+   * @return Posición del número dentro de un número entero 
+   */
+
+  // public static int posicionDeDigito (int numEntero, int digito){
+
+  //   String cadenaEntera = Integer.toString(numEntero);
+  //   String sDigito = Integer.toString(digito);
+    
+  //   for (int i = 1; i < cadenaEntera.length(); i++) {
+  //     if (cadenaEntera.charAt(i)==digito) {
+  //       return i;
+  //     } 
+  //   }
+  // }
 
 }
