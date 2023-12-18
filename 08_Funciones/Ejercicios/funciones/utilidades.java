@@ -232,8 +232,8 @@ izquierda).
   /**
    * Función pegaPorDelante: Añade un dígito a un número por delante.
    * 
-   * @param x long
-   * @param y long
+   * @param x long con el número entero introducido por teclado
+   * @param y long con el número que se añadirá por delante de x
    * @return long número completo con las dos partes unidas
    */
 
@@ -243,5 +243,20 @@ izquierda).
     String sNumCompleto = numeroComoStringY+numeroComoStringX;
     long parseo = Long.parseLong(sNumCompleto);
     return parseo;
+  }
+
+  /**
+   * Función trozoDeNumero: Toma como parámetros las posiciones inicial y final
+dentro de un número y devuelve el trozo correspondiente.
+   * 
+   * @param x
+   * @param y
+   * @return xyz
+   */
+
+  public static long trozoDeNumero (long num, int x, int y){
+    long numRecortado = quitaPorDelante(num, x);
+    long trozo = quitaPorDetras(numRecortado, y);
+    return trozo;
   }
 }
