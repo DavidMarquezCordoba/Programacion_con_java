@@ -29,6 +29,6 @@ public class T08Ejercicio13 {
 
     System.out.printf("Si recortamos el nº %d por delante %d dígitos y por detrás %d dígitos, el trozo resultante es: %d", numIntroducido, inicio, fin, utilidades.trozoDeNumero(numIntroducido, inicio, fin));
     
-    
+    teclado.close();
   }
 }

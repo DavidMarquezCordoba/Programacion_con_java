@@ -249,9 +249,10 @@ izquierda).
    * Función trozoDeNumero: Toma como parámetros las posiciones inicial y final
 dentro de un número y devuelve el trozo correspondiente.
    * 
-   * @param x
-   * @param y
-   * @return xyz
+   * @param num long - Número introducido para recortar
+   * @param x int posición que cortará por delante
+   * @param y int posición que cortará por detrás
+   * @return long devuelve el trozo recortado por delante y por detrás
    */
 
   public static long trozoDeNumero (long num, int x, int y){
