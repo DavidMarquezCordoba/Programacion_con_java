@@ -210,4 +210,22 @@ izquierda).
     long numRecortado = quitaPorDetras(numVolteado, y);
     return voltea(numRecortado);
   }
+
+
+  /**
+   * Función pegaPorDetras: Añade un dígito a un número por detrás.
+   * 
+   * @param x long: Número entero introducido por teclado.
+   * @param y long: Número que se añadirá por detrás a x
+   * @return long número completo con las dos partes unidas
+   */
+
+  public static long pegaPorDetras (long x, long y){
+
+    String numeroComoStringX = String.valueOf(x);
+    String numeroComoStringY = String.valueOf(y);
+    String sNumCompleto = numeroComoStringX+numeroComoStringY;
+    long parseo = Long.parseLong(sNumCompleto);
+    return parseo;
+  }
 }
