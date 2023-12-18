@@ -260,4 +260,30 @@ dentro de un número y devuelve el trozo correspondiente.
     long trozo = quitaPorDetras(numRecortado, y);
     return trozo;
   }
+
+  /**
+   * Función juntaNumerosIzq: Pega dos números para formar uno.
+   * 
+   * @param num1 long Número que formará otro número mayor juntando el num2
+   * @param num2 long Número que formará otro número mayor juntando el num1
+   * @return long valor de junta num1 y num2
+   */
+
+  public static long juntaNumerosIzq(long num1, long num2){
+
+    return pegaPorDelante(num1, num2);
+  }
+
+    /**
+   * Función juntaNumerosDer: Pega dos números para formar uno.
+   * 
+   * @param num1 long Número que formará otro número mayor juntando el num2
+   * @param num2 long Número que formará otro número mayor juntando el num1
+   * @return long valor de junta num1 y num2
+   */
+
+  public static long juntaNumerosDer(long num1, long num2){
+
+    return pegaPorDetras(num1, num2);
+  }
 }
