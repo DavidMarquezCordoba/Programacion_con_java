@@ -33,20 +33,20 @@ public class Varias {
   /**
   * Devuelve el número de dígitos que contiene un número entero
   *
-  * @param x un número entero
+  * @param numIntroducido long un número entero
   * @return la cantidad de dígitos que contiene el número
   */
 
-  public static int digitos(int x) {
+  public static int digitos(long numIntroducido) {
 
-      if (x == 0) {
+      if (numIntroducido == 0) {
         return 1;
       } else {
 
         int n = 0;
 
-        while (x > 0) {
-          x = x / 10;
+        while (numIntroducido > 0) {
+          numIntroducido = numIntroducido / 10;
           n++;
 
         }
@@ -218,6 +218,22 @@ public class Varias {
       nivel++;
       
     }
+  }
 
+  /**
+   * Función que desplaza el último dígito a la primera posición de un número introducido por teclado
+   * 
+   * @param numIntroducido long - Número introducido por teclado que dislocaremos
+   * @return long el número dislocado
+   */
+
+  public static long desplazaDigitos(long numIntroducido){
+
+    String ultimoDigito = String.valueOf(numIntroducido%10);
+    String numRecortado = String.valueOf(numIntroducido/=10);
+    String cadenaNumeros = ultimoDigito+numRecortado;
+    long numeroLong = Long.parseLong(cadenaNumeros);
+    return numeroLong;
+    
   }
 }

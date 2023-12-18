@@ -1,6 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import funciones.utilidades;
 import matematicas.Area;
 import matematicas.Geometria;
 import matematicas.Varias;
@@ -150,29 +151,41 @@ public class PruebaFunciones01 {
 
     ///////////////////////////////////////// DIBUJA PIRÁMIDE ////////////////////////////////////////////////
 
-    int alturaPiramide;
+    // int alturaPiramide;
 
-    try {
-      System.out.println("DIBUJA UNA PIRÁMIDE");
-      System.out.println("===================");
+    // try {
+    //   System.out.println("DIBUJA UNA PIRÁMIDE");
+    //   System.out.println("===================");
   
-      do {
-        System.out.print("Diga la altura de la pirámide deseada (solo números enteros positivos): ");
-        alturaPiramide = teclado.nextInt();
-      } while (alturaPiramide<0);
+    //   do {
+    //     System.out.print("Diga la altura de la pirámide deseada (solo números enteros positivos): ");
+    //     alturaPiramide = teclado.nextInt();
+    //   } while (alturaPiramide<0);
     
-      Varias.piramide(alturaPiramide);
+    //   Varias.piramide(alturaPiramide);
       
-    } catch (InputMismatchException e) {
-        System.out.println("");
-        System.out.println("ERROR - Solo pueden introducirse números.");
-        System.out.println("Clase de error - "+ e.getClass());
-        System.out.println("Mensaje de error - "+e.getMessage());
-    } finally {
-        System.out.println("");
-        System.out.println("\nHasta luego");
-        System.out.println("");
-    }
+    // } catch (InputMismatchException e) {
+    //     System.out.println("");
+    //     System.out.println("ERROR - Solo pueden introducirse números.");
+    //     System.out.println("Clase de error - "+ e.getClass());
+    //     System.out.println("Mensaje de error - "+e.getMessage());
+    // } finally {
+    //     System.out.println("");
+    //     System.out.println("\nHasta luego");
+    //     System.out.println("");
+    // }
+
+
+    ///////////////////////////////////////// DESPLAZA NÚMERO ////////////////////////////////////////////////
+
+    long longNumIntroducido;
+
+    System.out.println("Introduce un número que quieras dislocar: ");
+    longNumIntroducido = teclado.nextLong();
+
+    System.out.printf("El número %d, si lo dislocamos es el: %d ", longNumIntroducido, Varias.desplazaDigitos(longNumIntroducido));
+
+    
     teclado.close();
   }
 }
