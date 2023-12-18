@@ -286,4 +286,16 @@ dentro de un número y devuelve el trozo correspondiente.
 
     return pegaPorDetras(num1, num2);
   }
+
+  /**
+   * Función que muestra los números primos que hay entre 1 y 1000.
+   */
+
+  public static void primosDe1A1000(){
+    for (int i = 1; i < 1000; i++) {
+      if (esPrimo(i)) {
+        System.out.print(i+" "); 
+      }
+    }
+  }
 }
