@@ -228,4 +228,20 @@ izquierda).
     long parseo = Long.parseLong(sNumCompleto);
     return parseo;
   }
+
+  /**
+   * Función pegaPorDelante: Añade un dígito a un número por delante.
+   * 
+   * @param x long
+   * @param y long
+   * @return long número completo con las dos partes unidas
+   */
+
+  public static long pegaPorDelante (long x, long y){
+    String numeroComoStringX = String.valueOf(x);
+    String numeroComoStringY = String.valueOf(y);
+    String sNumCompleto = numeroComoStringY+numeroComoStringX;
+    long parseo = Long.parseLong(sNumCompleto);
+    return parseo;
+  }
 }
