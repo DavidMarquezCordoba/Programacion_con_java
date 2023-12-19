@@ -310,4 +310,38 @@ dentro de un número y devuelve el trozo correspondiente.
       }
     }
   }
+
+  /**
+   * Función que pasa de binario a decimal.
+  */
+
+  public static void binarioADecimal(){
+
+  }
+  
+
+  /**
+   * Función que pasa de decimal a binario.
+  */
+
+  public static String decimalABinario(long x){
+    // long numRestante;
+    int modulo;
+    String binario="";
+
+    do {
+      
+      modulo = (int) x%2;
+      x/=2;
+      binario += Integer.toString(modulo);
+      
+    } while (!(x ==0));
+
+  
+    StringBuilder sb = new StringBuilder(binario);
+    sb.reverse();
+    return sb.toString();
+  }
+
+  
 }
