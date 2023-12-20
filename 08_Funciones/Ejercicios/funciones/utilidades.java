@@ -313,19 +313,39 @@ dentro de un número y devuelve el trozo correspondiente.
 
   /**
    * Función que pasa de binario a decimal.
+   * 
+   * @param x long - Número binario que introduce el usuario por teclado.
+   * @return long - Número decimal equivalente al número binario introducido
   */
 
-  public static void binarioADecimal(){
+  public static long binarioADecimal(long x){
 
+    
+    
+    long digitos = cuentaDigitos(x);          // Contamos los dígitos de x
+    long total = 0;
+    String binarioString = String.valueOf(x); // Convertir el número binario a una cadena para obtener su longitud
+
+    //Una vez obtenemos la longitud, lo vamos recorriendo caracter a caracter hasta el final
+    for (int i = 0; i < binarioString.length(); i++) {
+      //Obtenemos el valor de cada caracter en cada una de las posiciones
+      int valorCaracter = Character.getNumericValue(binarioString.charAt(i));
+      //Vamos acumulando valores del resultado de multiplicar el valor del caracter por la potencia base 2 de cada uno de los dígitos.
+      total += valorCaracter * Math.pow(2, digitos - i -1);
+    }
+
+    return total;
   }
   
 
   /**
    * Función que pasa de decimal a binario.
+   * @param x long - Número decimal introducido por el usuario
+   * @return String - Número binario en formato String
   */
 
   public static String decimalABinario(long x){
-    // long numRestante;
+
     int modulo;
     String binario="";
 

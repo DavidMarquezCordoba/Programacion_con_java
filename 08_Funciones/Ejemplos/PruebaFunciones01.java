@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import funciones.utilidades;
+// import funciones.utilidades;
 import matematicas.Area;
 import matematicas.Geometria;
 import matematicas.Varias;
