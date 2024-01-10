@@ -22,7 +22,7 @@ public class Array02 {
     int[] nomVariable = {8, 33, 200, 150, 11};
     
 
-    System.out.println("El array nomVariable tiene 5 elementos ¿cuál de ellos quiere ver?");
+    System.out.println("El array nomVariable tiene "+ nomVariable.length +" elementos ¿cuál de ellos quiere ver?");
     System.out.print("Introduzca un número del 0 al 4: ");
 
     Scanner teclado = new Scanner(System.in);
