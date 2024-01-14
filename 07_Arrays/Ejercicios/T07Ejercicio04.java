@@ -22,7 +22,7 @@ public class T07Ejercicio04 {
     System.out.println("=================================");
     //Cargamos valores en número[]
     for (int i = 0; i < numero.length; i++) {
-      numero [i] = (int) (Math.random()*11);
+      numero [i] = (int) (Math.random()*101);
       System.out.printf("%3d", numero[i]);
       
       //Cargamos valores en cuadrado[] referenciándonos en el número
