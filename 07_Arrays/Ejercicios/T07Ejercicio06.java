@@ -14,9 +14,11 @@ public class T07Ejercicio06 {
     
     int [] numero = new int [5];
 
-    System.out.println("Introduzca los números números enteros y pulse INTRO: ");
+    System.out.println("Introduzca 5 números enteros y pulse INTRO: ");
     
     //Escritura de array
+
+    //Vamos escribiendo en cada una de las posiciones hasta el máximo de longitud del array declarado (5)
     for (int i = 0; i < numero.length; i++) {
       numero [i] = Integer.parseInt(System.console().readLine());
     }
@@ -27,13 +29,20 @@ public class T07Ejercicio06 {
     }
 
     //Rotamos
-    int aux = numero[4];
 
-    for (int i = numero.length -1 ; i > 0; i--) {
+    //Para rotar, creamos una variable copiando la última posición, ya que todas las posiciones se aumentarán en 1
+    //y si no copiamos el valor de la última posición se perderá
+
+    int aux = numero[numero.length-1];
+
+    //Recorremos el array al revés
+    for (int i = numero.length - 1 ; i > 0; i--) {
+
+      //La última posición tomará el valor del penúltimo y así sucesivamente hasta el principio
       numero [i] = numero [i -1];
-      System.out.printf("");
     }
 
+    //El valor de la posición 0 lo machacaremos con el valor copiado 
     numero[0] = aux;
 
     System.out.println("");
