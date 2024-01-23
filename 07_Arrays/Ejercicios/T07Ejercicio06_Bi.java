@@ -8,36 +8,33 @@ el array.
 public class T07Ejercicio06_Bi {
   public static void main(String[] args) {
 
-    int [][] array = new int [10][10];
+    int [][] array = new int [6][10];
 
     int minimo = Integer.MAX_VALUE;
     int maximo = Integer.MIN_VALUE;
-    boolean esRepetido = false;
-    // Rellenamos
-    for (int filas = 0; filas < array.length; filas++) {
-      for (int columnas = 0; columnas < array[filas].length; columnas++) {
-        
-        //Ejecutamos al menos una vez la generación de un número aleatorio
-        do {
-          esRepetido=false;
-          array [filas][columnas] = (int)(Math.random()*1001);
-          //Para comprobar el número es necesario recorrer el array por si hubiera una coincidencia
-          for (int i2 = 0; i2 < array.length; i2++) {
-            for (int j2 = 0; j2 < array[0].length; j2++) {
-              //Comprobamos si el número aleatorio es igual a otro que se encuentre en el array relleno
-              if (array [filas][columnas] == array [i2][j2]) {
-                esRepetido = true;  //Si lo encuentra ya no es único, es decir, false
-              }
-            }
-          }
-          //Se va a estar repitiendo el número aleatorio mientras
-        } while (esRepetido);
+    // boolean esRepetido = false;
 
-        
-        if (array[filas][columnas] > maximo) {
-          maximo = array[filas][columnas];
-        } else if (array[filas][columnas] < minimo) {
-          minimo = array[filas][columnas];
+    //Por defecto se inicializa en false
+    boolean[] numerosUsados = new boolean[1001];
+
+    // Rellenamos
+    for (int i = 0; i < array.length; i++) {
+      for (int j = 0; j < array[i].length; j++) {
+        int numeroAleatorio;
+        do {
+          //Se genera el número aleatorio
+          numeroAleatorio = (int) (Math.random() * 1001);
+          //Mientras sea la condición verdadera se va a repetir, pero como está false, continuamos
+        } while (numerosUsados[numeroAleatorio]);
+        //En la posición i j colocamos el número que ya ha pasado el filtro de si está o no repetido
+        array[i][j] = numeroAleatorio;
+        //Al valor oobtenido, le damos el valor true, para que si Random lo vuelve a sacar, se repita hasta que sea único
+        numerosUsados[numeroAleatorio] = true;
+
+        if (array[i][j] > maximo) {
+          maximo = array[i][j];
+        } else if (array[i][j] < minimo) {
+          minimo = array[i][j];
         }
       }
     }
@@ -70,6 +67,5 @@ public class T07Ejercicio06_Bi {
         }
       }
     }
-    
   }
 }
