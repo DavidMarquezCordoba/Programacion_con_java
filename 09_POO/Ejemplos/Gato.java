@@ -41,7 +41,12 @@ public class Gato {
     }
   }
 
-  //Comentario función
+  /**
+   * Explica tu función aquí
+   * 
+   * @param x
+   * 
+   */
   void peleaCon(Gato rival){
     //THIS hace referencia al atributo de la clase para diferenciarlo del atributo como parámetro
     if (this.sexo.equals(rival.sexo) && this.sexo.equals("macho")) {

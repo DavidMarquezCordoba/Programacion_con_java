@@ -9,7 +9,7 @@
 public class T07Ejercicio05_Bi {
   public static void main(String[] args) {
 
-    int [][] array = new int [6][10];
+    int [][] array = new int [15][15];
 
     int minimo = Integer.MAX_VALUE;
     int maximo = Integer.MIN_VALUE;

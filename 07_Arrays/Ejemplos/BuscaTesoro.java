@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
 /**
- * Explica tu código aquí
+  * Minijuego "Busca el tesoro"
+  *
+  * Se colocan una mina y un tesoro de forma aleatoria en un cuadrante de
+  * cuatro filas por cinco columnas. El usuario intentará averiguar dónde
+  * está el tesoro.
  * 
  * @author David Márquez Córdoba
  */
@@ -9,59 +13,71 @@ import java.util.Scanner;
 public class BuscaTesoro {
   public static void main(String[] args) {
     
-    //constantes que representan las diferentes casillas
+    // se definen constantes para representar el
+    // contenido de las celdas
     final int VACIA = 0;
     final int TESORO = 1;
     final int MINA = 2;
     final int JUGADA = 3;
+
+    //Creamos las variables que contendrá el valor de fila-columna que el usuario meta por teclado
     int fila;
     int columna;
 
-    //Revisar ejercicio de nuevo///
-    int revision;
-
-    //Tablero de 4 filas y 5 columnas
+    //Tablero de 4 filas y 5 columnas de momento vacio.
     int [][] tablero = new int [4][5];
 
-    //Inicializamos el tablero con casillas vacias
+    //Inicializamos el tablero con casillas vacias para guardarla en la constante "Vacia"
     for (int i = 0; i < tablero.length; i++) {
-      for (int j = 0; j < tablero[i].length; j++) {
+      for (int j = 0; j < tablero[0].length; j++) {
         //Es lo mismo que dar valor 0 a todas las casillas
-        tablero[i][j] = VACIA;
+        tablero[i][j] = VACIA;          //////////// 1/4 CONSTANTE ASIGNADA !!!!
       }
     }
 
-    //Se coloca una casilla de tesora de manera aleatoria en el tablero
-    int tesoroFila = (int) (Math.random()*4);     //Num aleatorio entero [0,4]
+    //Generamos la posición del TESORO de manera aleatoria en el tablero - Un nº aleatorio para la coordenada i y otra para la j
+    int tesoroFila = (int) (Math.random()*4);     //Num aleatorio entero [4,0]
     int tesoroColumna = (int) (Math.random()*5);  //Num aleatorio entero [0,5]
 
-    tablero [tesoroFila][tesoroColumna] = TESORO;
+    //Asignamos i - j con las coordenadas aleatorias y se la asignamos a TESORO
+    tablero [tesoroFila][tesoroColumna] = TESORO;     //////////// 2/4 CONSTANTE ASIGNADA !!!!
+
 
     //Se coloca una casilla de MINA de manera aleatoria en el tablero
     //Pero debe ser distinta a la del Tesoro
-
     int minaFila;
     int minaColumna;
 
     do {
+      //Asignamos al menos una vez las coordenadas para la mina
       minaFila = (int) (Math.random()*4); 
       minaColumna = (int) (Math.random()*5); 
+      //Comprobamos que no coinciden ni el valor de fila ni columna para el tesoro con la mina
     } while ((tesoroFila == minaFila) && (tesoroColumna == minaFila));
 
-    tablero [minaFila][minaColumna] = MINA;
+    //Una vez con las coordenadas i -j diferentes a la del tesoro... asignamos a mina
+    tablero [minaFila][minaColumna] = MINA;       //////////// 3/4 CONSTANTE ASIGNADA !!!
 
-    //Iniciamos el juego
+    ///////////////////////////////////
+    //////Iniciamos el juego///////////
+    ///////////////////////////////////
+
     System.out.println("\nJUEGO DEL TESORO");
     System.out.println("================");
     System.out.println("");
 
+    //Creamos opcion booleana para saber si salimos del juego o continuamos
     boolean salida = false;
 
     do {
       //Pintamos el tablero
       for (int i = tablero.length - 1; i >= 0; i--) {
+        //Esto pintará 3 |
+        //             2 |
+        //             1 | ...
         System.out.print(i + " |");
         for (int j = 0; j < tablero[i].length; j++) {
+
           if (tablero[i][j] == JUGADA) {
             System.out.printf("%2s", "X");
           } else {
@@ -108,12 +124,13 @@ public class BuscaTesoro {
           salida = true;
           break;
 
-        default:
+
       }
 
 
       teclado.close();
     } while (!salida); //Si salimos del bucle do while es porque toco mina o tesoro
+    
     
 //Pintamos el tablero final, una vez terminada la partida
 String c = "";
