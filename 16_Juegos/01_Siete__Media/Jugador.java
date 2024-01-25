@@ -1,11 +1,9 @@
-public class Juego_Baraja {
-
+public class Jugador {
   //El orden es siempre Aributo- constructores -metodos
 
   ///////////Atributos
-  
-  //Array de objetos de tipo Carta
-  Juego_Carta [] cartas = new Juego_Carta[40];
+  int saldo;
+
 
 
   ////////Contructores
@@ -13,15 +11,15 @@ public class Juego_Baraja {
 
   ////////Métodos - Funciones (que hacen) de tipo void
   
-  void barajar(){
-    
+  void puntuacionMano (){
+
   }
-  
-  void repartir(){
 
+  void recibirCartas(){
 
+  }
 
-
+  void realizarApuesta(){
     
   }
 }

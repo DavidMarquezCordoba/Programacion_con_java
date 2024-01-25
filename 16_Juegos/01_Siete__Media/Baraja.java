@@ -1,11 +1,10 @@
-public class Juego_Baraja {
-
+public class Baraja {
   //El orden es siempre Aributo- constructores -metodos
 
   ///////////Atributos
   
   //Array de objetos de tipo Carta
-  Juego_Carta [] cartas = new Juego_Carta[40];
+  Carta [] cartas = new Carta[40];
 
 
   ////////Contructores
