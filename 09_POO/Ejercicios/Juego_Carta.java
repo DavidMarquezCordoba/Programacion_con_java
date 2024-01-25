@@ -5,16 +5,19 @@ public class Juego_Carta {
   ///////////Atributos
   String palo;
   int valorCarta;
+  double puntuacion;
 
 
   ////////Contructores
 
+  public Juego_Carta (String palo, int valorCarta, double puntuacion){
+    this.palo = palo;
+    this.valorCarta = valorCarta;
+    this.puntuacion = puntuacion;
+  }
 
   ////////Métodos - Funciones (que hacen) de tipo void
   
-  int puntuacion(){
-    System.out.println(valorCarta);
-    return int;
-  }
+
   
 }
