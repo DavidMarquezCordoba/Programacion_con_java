@@ -3,7 +3,7 @@
  * 
  * 
  * @author David Márquez Córdoba
- * @author Enrique
+ * @author Enrique Capote Molina
  */
 
 public class SieteYMedia {
