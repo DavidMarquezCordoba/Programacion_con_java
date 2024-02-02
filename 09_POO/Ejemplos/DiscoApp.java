@@ -54,8 +54,11 @@ public class DiscoApp {
           System.out.println("\nLISTADO");
           System.out.println("=========");
 
-          for (int i = 0; i < discos.length; i++) {
-            System.out.println(discos[i].toString());
+          for (Disco d : discos) {
+            // if (!d.getCodigo().equals("LIBRE")) {
+              System.out.println(d);
+            // }
+            // System.out.println(discos[i].toString());
           }
           break;
       
