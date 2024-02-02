@@ -55,7 +55,7 @@ public class Disco {
     this.duracion = duracion;
   }
 
-  //toString
+  
   @Override
   public String toString() {
     String cadena = "\n---------------------";
@@ -63,8 +63,8 @@ public class Disco {
           cadena+="\nAutor: " + this.autor;
           cadena+="\nTítulo: " + this.titulo;
           cadena+="\nGénero: " + this.genero;
-          cadena+="\nDuración: " + this.titulo;
-          cadena = "\n---------------------";
+          cadena+="\nDuración: " + this.duracion;
+          cadena+= "\n---------------------";
           
     return cadena;
   }
