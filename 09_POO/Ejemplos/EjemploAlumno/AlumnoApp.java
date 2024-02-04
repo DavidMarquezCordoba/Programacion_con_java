@@ -1,3 +1,4 @@
+package EjemploAlumno;
 /**
  * Main de la aplicación Alumno
  * 

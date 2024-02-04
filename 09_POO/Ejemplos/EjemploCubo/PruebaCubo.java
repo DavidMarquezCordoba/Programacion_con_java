@@ -1,3 +1,4 @@
+package EjemploCubo;
 /**
  * Explica tu código aquí
  * 

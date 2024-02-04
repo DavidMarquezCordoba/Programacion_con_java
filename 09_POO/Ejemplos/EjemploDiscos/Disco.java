@@ -1,3 +1,4 @@
+package EjemploDiscos;
 /**
  * Definición de la clase Disco
  * 

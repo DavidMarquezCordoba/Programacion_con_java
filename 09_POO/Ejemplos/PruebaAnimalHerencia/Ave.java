@@ -1,4 +1,4 @@
-package PruebaAnimal;
+package PruebaAnimalHerencia;
 
 /**
  * Ave.java

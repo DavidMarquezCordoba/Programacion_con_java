@@ -1,3 +1,4 @@
+package EjemploGatos;
 public class Gato {
 
   //El orden es siempre Aributo- constructores -metodos

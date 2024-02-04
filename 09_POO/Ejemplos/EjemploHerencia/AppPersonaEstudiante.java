@@ -1,3 +1,4 @@
+package EjemploHerencia;
 /**
  * Main pra probar la herencia de persona en estudiante
  * 

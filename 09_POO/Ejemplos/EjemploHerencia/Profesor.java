@@ -1,3 +1,4 @@
+package EjemploHerencia;
 /**
  * Clase Profesor que hereda de Persona
  * 

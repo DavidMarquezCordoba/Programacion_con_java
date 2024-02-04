@@ -1,3 +1,4 @@
+package EjemploCubo;
 public class Cubo {
   
   //Atributos de la clase

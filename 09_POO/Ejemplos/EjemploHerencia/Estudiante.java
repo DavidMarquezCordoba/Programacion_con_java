@@ -1,3 +1,4 @@
+package EjemploHerencia;
 /**
  * Clase Estudiante que herada de la superclase Persona
  * 

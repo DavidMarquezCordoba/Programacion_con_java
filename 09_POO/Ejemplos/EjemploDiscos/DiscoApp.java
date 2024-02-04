@@ -1,3 +1,4 @@
+package EjemploDiscos;
 import java.util.Scanner;
 
 /**

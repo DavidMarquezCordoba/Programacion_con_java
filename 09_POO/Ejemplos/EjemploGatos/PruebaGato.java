@@ -1,3 +1,4 @@
+package EjemploGatos;
 public class PruebaGato {
   public static void main(String[] args) {
     
