@@ -34,7 +34,7 @@ public class Profesor extends Persona{
 
   @Override
   public String toString() {
-    return super.toString() + "[PROFESOR ->] [Departamento:" + departamento;
+    return super.toString() + " [PROFESOR ->] [Departamento:" + departamento;
   }
 }
 

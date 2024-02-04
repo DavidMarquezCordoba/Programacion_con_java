@@ -39,11 +39,11 @@ public class Estudiante extends Persona{
   public void mostrarDatos(){
     //Llamo al método mostrar Datos de la superclase Padre
     super.mostrarDatos();
-    System.out.println("Estudiante matriculado de " +creditos+ " creditos");
+    System.out.println(" Estudiante matriculado de " +creditos+ " creditos");
   }
 
   @Override
   public String toString() {
-    return super.toString() + "[ESTUDIANTE ->] [Créditos:" + creditos;
+    return super.toString() + " [ESTUDIANTE ->] [Créditos:" + creditos;
   }
 }

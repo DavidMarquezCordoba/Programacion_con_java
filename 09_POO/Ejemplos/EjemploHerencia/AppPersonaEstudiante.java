@@ -17,12 +17,16 @@ public class AppPersonaEstudiante {
     // p.mostrarDatos();
     // e.mostrarDatos();
 
+    System.out.println("");
     System.out.println(p.toString());
     System.out.println(p);
 
+    System.out.println("");
     System.out.println(e.toString());
     System.out.println(e);
+    e.mostrarDatos();
 
+    System.out.println("");
     System.out.println(pf.toString());
     System.out.println(pf);
   }

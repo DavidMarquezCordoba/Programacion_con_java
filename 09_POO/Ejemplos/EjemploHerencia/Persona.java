@@ -43,7 +43,7 @@ public class Persona {
 
 
   public void mostrarDatos(){
-    System.out.println("Nombre: "+nombre+"\t Edad: "+ edad+"\t Dni: "+dni);
+    System.out.print("Nombre: "+nombre+"\t Edad: "+ edad+"\t Dni: "+dni);
   }
 
 
