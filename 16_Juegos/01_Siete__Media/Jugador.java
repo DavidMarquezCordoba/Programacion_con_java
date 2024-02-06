@@ -4,9 +4,14 @@ public class Jugador {
   ///////////Atributos
   int saldo;
 
-
+  public int getSaldo() {
+    return saldo;
+  }
 
   ////////Contructores
+  public Jugador(){
+    this.saldo = 1000;
+  }
 
 
   ////////Métodos - Funciones (que hacen) de tipo void
@@ -22,4 +27,7 @@ public class Jugador {
   void realizarApuesta(){
     
   }
+
+
+
 }

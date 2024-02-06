@@ -2,7 +2,7 @@ public class Carta {
   //El orden es siempre Aributo- constructores -metodos
 
   ///////////Atributos
-  private String numero;
+  private String numero;  
   private String palo;
   private double valor;
   
@@ -15,6 +15,10 @@ public class Carta {
     this.palo = palo;
     this.valor = valor;
     
+  }
+
+  public Carta(){
+
   }
   
 
