@@ -58,4 +58,8 @@ public class Baraja {
       System.out.printf(carta[i].toString());
     }
   }
+
+  public void barajar(){
+    
+  }
 }
