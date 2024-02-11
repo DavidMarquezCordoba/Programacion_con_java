@@ -35,6 +35,7 @@ public class Vehiculo {
    */
   public Vehiculo(){
     this.kilometrosRecorridos = 0;
+    Vehiculo.vehiculosCreados++;
   }
 
 

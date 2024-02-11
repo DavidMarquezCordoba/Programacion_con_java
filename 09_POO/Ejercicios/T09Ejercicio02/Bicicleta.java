@@ -38,6 +38,7 @@ public class Bicicleta extends Vehiculo{
   public Bicicleta(int kilometrajeBici){
     super();
     this.kilometrajeBici = kilometrajeBici;
+    
   }
 
   //Métodos

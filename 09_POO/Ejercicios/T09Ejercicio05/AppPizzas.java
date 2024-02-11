@@ -20,10 +20,12 @@ public class AppPizzas {
 
     Pizza p3 = new Pizza("Margarita", "mediana");
 
+    System.out.println("");
     System.out.println(p1);
     System.out.println(p2);
     System.out.println(p3);
-
+    System.out.println("");
+    
     p2.sirve();
     
     System.out.println("pedidas: " + Pizza.getTotalPedidas());

@@ -27,6 +27,7 @@ public class AppVehiculo {
       System.out.println("6. Ver kilometraje del coche");
       System.out.println("7. Ver kilometraje total");
       System.out.println("8. Salir\n");
+      System.out.println("9. ¿Cuántos vehículos se han creado?");
   
       System.out.println("Elige una opción (1-8): ");
       opcion = Integer.parseInt(System.console().readLine());
@@ -66,6 +67,10 @@ public class AppVehiculo {
 
         case 8:
           System.out.println("Gracias, hasta pronto");
+          break;
+
+        case 9:
+          System.out.println("Se han creado "+ Vehiculo.getVehiculosCreados());
           break;
       }
 

@@ -45,7 +45,7 @@ public class Pizza {
     //Inicializamos cada vez que hagamos una pizza esté "pedida"
     this.estado="PEDIDA";
     //Aumentamos el total de pizzas creadas
-    this.totalPedidas++;
+    Pizza.totalPedidas++;
 
   }  
 
@@ -54,9 +54,10 @@ public class Pizza {
   public void sirve(){
     if (estado.equals("PEDIDA")) {
       this.estado = "servida";
-      this.totalServidas++;
+      //Si está servida, aumentamos el contador
+      Pizza.totalServidas++;
     } else {
-      
+      System.out.println("Lo siento, la pizza está pedida");
     }
   }
 
