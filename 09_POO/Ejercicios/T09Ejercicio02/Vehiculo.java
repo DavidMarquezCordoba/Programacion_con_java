@@ -4,7 +4,7 @@ package T09Ejercicio02;
  * 
  * @author David Márquez Córdoba
  */
-public class Vehiculo {
+public abstract class Vehiculo {
 
   //Atributos de clase (Solo accesibles desde la clase)
   private static int vehiculosCreados = 0;

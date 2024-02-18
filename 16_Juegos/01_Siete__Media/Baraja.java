@@ -42,6 +42,7 @@ public class Baraja {
   //Método auxiliar para determinar la puntuación de la carta según el valor
   public double valorCarta(int j){
     //Si el valor sacado es menor o igual a 7, tendrá una puntuación equivalente a su valor
+    j+=1;
     if (j<=7) {
       return j;
       //Si es una figura, tan solo contará medio punto
@@ -56,10 +57,23 @@ public class Baraja {
   public void mostrarBaraja(){
     for (int i = 0; i < carta.length; i++) {
       System.out.printf(carta[i].toString());
+      System.out.println("");
     }
   }
 
   public void barajar(){
-    
+    for (int i = 0; i < carta.length; i++) {
+      int indiceBarajar = (int)(Math.random()*carta.length);
+      //Copiamos el valor de la posición del array en un auxiliar
+      Carta cartaAuxiliar = carta[i];
+      //Pisoteamos el valor real por el aleatorio
+      carta[i] = carta[indiceBarajar];
+      //Intercambiamos posiciones
+      carta[indiceBarajar] = cartaAuxiliar;
+    }
   }
+
+  // public Carta extraerCarta(){
+
+  // }
 }

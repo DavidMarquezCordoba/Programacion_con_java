@@ -37,5 +37,7 @@ public class PruebaAnimal {
     Pinguino pingu = new Pinguino(Sexo.HEMBRA);
     pingu.aseate();
     pingu.vuela();
+
+    pingu.duerme();
   }
 }

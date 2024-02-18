@@ -17,6 +17,16 @@ public class SieteYMedia {
     System.out.println("a 7 puntos y medio, pero sin pasarte\n");
     System.out.println("COMENCEMOS\n");
 
-    
+    Baraja baraja1 = new Baraja();
+
+    baraja1.inicializaBaraja();
+
+    baraja1.mostrarBaraja();
+
+    System.out.println("");
+
+    baraja1.barajar();
+
+    baraja1.mostrarBaraja();
   }
 }
