@@ -1,59 +1,85 @@
 public class Baraja {
   //El orden es siempre Aributo- constructores -metodos
 
-  ///////////Atributos
+  /////////////////////////////////
+  ///////////ATRIBUTOS/////////////
+  /////////////////////////////////
+
   private String [] palos = {"Oros", "Copas", "Espadas", "Bastos"};
   private String [] numeroCarta = {"1","2","3","4","5","6","7","Sota","Caballo","Rey"};
   private Carta [] carta;
   private int numCartas;
+  private Carta cartaAuxiliar;
 
-  ////////Contructores
+  /////////////////////////////////
+  ////////CONSTRUCTORES////////////
+  /////////////////////////////////
+
+  /**
+   * Constructor por defecto de una baraja de cartas con 40 cartas
+   */
   public Baraja (){
+
     //inicializamos el número de cartas multiplicando los palos por los valores (4*10=40)
     numCartas = this.palos.length * this.numeroCarta.length;
+
     //Declaramos un objeto de tipo carta con 40
     carta = new Carta [numCartas];
-    //Llamamos al método inicializarBaraja para dejar cargada cada carta con valores
+
+    //Llamamos al método inicializarBaraja para dejar cargada cada carta con valores (RECURSIVIDAD)
     inicializaBaraja();
   }
 
-
-  /////METODOS
+  /////////////////////////////////
+  /////////METODOS/////////////////
+  /////////////////////////////////
   
-  // Inicializar es rellenar las cartas con valores
+  /**
+   * Inicializamos la baraja, otorgándole valor a cada una de las cartas de la misma
+   */
   public void inicializaBaraja(){
-    //Declaramos el índice que recorrerá el array tomando valores en dada posición
+
+    //Declaramos el índice que recorrerá el array carta
     int indice = 0;
 
     //Mientras que el índice sea menor que el número de cartas inicializadas, continuará obteniendo valores
-    while (indice < numCartas) {
+    // while (indice < numCartas) { //////BORRADO PORQUE CREO QUE NO HACE FALTA
+
       //Recorremos array a lo largo de palos y valores
       for (int i = 0; i < palos.length; i++) {
         for (int j = 0; j < numeroCarta.length; j++) {
+
           //Le vamos dando valor a cada carta pasándole por parámetros cada argumento
           carta[indice] = new Carta(numeroCarta[j], palos[i], valorCarta(j));
+
           //Aumentamos el índice
           indice++;
         }
       }
-    }
+    // }
   }
 
-  //Método auxiliar para determinar la puntuación de la carta según el valor
+
+  /**
+   * Método auxiliar para determinar la puntuación de la carta según el valor
+   * 
+   * @param j valor obtenido del bucle for al inicializar la baraja, determina el número de carta
+   * @return devuelve el valor del propio número de la carta o 0,5 en caso de las figuras
+   */
   public double valorCarta(int j){
     //Si el valor sacado es menor o igual a 7, tendrá una puntuación equivalente a su valor
-    j+=1;
+    j+=1; //Se le suma uno porque el parámetro recoge la variable de un for, que tiene un -1 por defecto
     if (j<=7) {
       return j;
       //Si es una figura, tan solo contará medio punto
     } else {
       return 0.5;
     }
-
-    // Condicional ternario
-    // return j<7? j+1 : 0.5;
   }
 
+  /**
+   * Método que muestra la baraja en el estado actual
+   */
   public void mostrarBaraja(){
     for (int i = 0; i < carta.length; i++) {
       System.out.printf(carta[i].toString());
@@ -61,11 +87,14 @@ public class Baraja {
     }
   }
 
+  /**
+   * Ordena de manera aleatoria la baraja, ya que al crearla se generan números correlativos
+   */
   public void barajar(){
     for (int i = 0; i < carta.length; i++) {
       int indiceBarajar = (int)(Math.random()*carta.length);
-      //Copiamos el valor de la posición del array en un auxiliar
-      Carta cartaAuxiliar = carta[i];
+      //Copiamos el valor de la posición del array en un objeto tipo Carta auxiliar
+      cartaAuxiliar = carta[i];
       //Pisoteamos el valor real por el aleatorio
       carta[i] = carta[indiceBarajar];
       //Intercambiamos posiciones
@@ -73,7 +102,24 @@ public class Baraja {
     }
   }
 
-  // public Carta extraerCarta(){
+  /**
+   * Extrae una carta de la baraja
+   * 
+   * @return Devuelve una carta aleatoria.
+   */
+  public Carta extraerCarta(){
 
-  // }
+    int numAleatorio = (int)(Math.random()*carta.length);
+
+    return carta[numAleatorio];
+    
+  }
+
+  /**
+   * Muestra el contenido de la carta previamente extraida llamando a un toString directamente desde la clase
+   */
+  public void mostrarCartaExtraida(){
+    System.out.print(extraerCarta());
+  }
+
 }
