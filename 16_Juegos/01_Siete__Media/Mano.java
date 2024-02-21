@@ -38,7 +38,7 @@ public class Mano {
    * Acumula el valor obtenido al extraer una carta
    * @param d pasamos por parámetro la carta extraida
    */
-  public void acumula(double valor){
-    puntosAcumulados += valor;
+  public void acumula(Carta cartaEnJuego){
+    puntosAcumulados += cartaEnJuego.getValor();
   }
 }

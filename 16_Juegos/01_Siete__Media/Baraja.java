@@ -118,8 +118,8 @@ public class Baraja {
   /**
    * Muestra el contenido de la carta previamente extraida llamando a un toString directamente desde la clase
    */
-  public void mostrarCartaExtraida(){
-    System.out.print(extraerCarta());
+  public void mostrarCartaExtraida(Carta cartaEnJuego){
+    System.out.print(cartaEnJuego);
   }
 
 }

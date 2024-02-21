@@ -17,13 +17,16 @@ public class SieteYMedia {
     boolean continuar = true;
     // int puntuacionManoJugador = 0;
     // int puntuacionManoIA = 0;
-    Carta cartaEnJuego;
+    Carta cartaEnJuegoJugador;
 
     boolean repetir;
     String sRepetir;
 
     boolean seguirJugado;
     String sSeguirJugando;
+
+    boolean haGanadoJugador = false;
+    boolean haGanadoIA = false;
     
     //Lógica previa, creación de Jugador
     Jugador jugador1 = new Jugador();
@@ -38,6 +41,7 @@ public class SieteYMedia {
     System.out.println("+===============================================================+");
     System.out.println("\nJugarás contra la IA, sacarás cartas de la baraja hasta llegar");
     System.out.println("a 7 puntos y medio, pero sin pasarte\n");
+    System.out.println("Nota: Empiezas con un saldo inicial de 1000 puntos.\n");
     System.out.println("+ - - - - - - - - - - - +");
     System.out.println("|\tCOMENCEMOS\t|");
     System.out.println("+ - - - - - - - - - - - +\n");
@@ -122,35 +126,67 @@ public class SieteYMedia {
       }
 
     } while (continuar == false || repetir == true);
-
+// 
     System.out.println("\n**********************************************");
     System.out.println("*** ¿Hasta dónde estás dispuesto a llegar? ***");
     System.out.println("**********************************************\n");
 
-    do {
+    /////////////////////////////
+    ////////TURNO JUGADOR////////
+    /////////////////////////////
 
+    do {
       seguirJugado = true;
 
-      cartaEnJuego = baraja1.extraerCarta();
+      //Creamos un objeto tipo Carta donde almacenaremos la carta extraida de la baraja para poder acceder a sus datos
+      cartaEnJuegoJugador = baraja1.extraerCarta();
   
-      System.out.print("Ha sacado ");
-      baraja1.mostrarCartaExtraida();
+      System.out.print("Ha sacado el ");
+      baraja1.mostrarCartaExtraida(cartaEnJuegoJugador);
 
       // System.out.println(cartaEnJuego.getValor());
-      // manoJugador.acumula(cartaEnJuego.getValor());
+      manoJugador.acumula(cartaEnJuegoJugador);
 
-      System.out.print("\nTotal puntos acumulador: " + cartaEnJuego.getValor());
+      System.out.print("\n\nTotal puntos acumulados en esta ronda: " + manoJugador.getPuntosAcumulados()+"\n");
   
-      System.out.print("\n¿Desea continuar?: ");
-      sSeguirJugando = System.console().readLine();
-  
-      if (sSeguirJugando.equalsIgnoreCase("si")) {
-        seguirJugado = true;
-      } else if (sSeguirJugando.equalsIgnoreCase("no")) {
-        seguirJugado = false;
+      //Comprobamos que no se ha pasado
+      if (manoJugador.getPuntosAcumulados() < 7.5) {
+
+        System.out.print("\n¿Desea continuar?: ");
+        sSeguirJugando = System.console().readLine();
+        
+        
+        if (sSeguirJugando.equalsIgnoreCase("si")) {
+          seguirJugado = true;
+
+        } else if (sSeguirJugando.equalsIgnoreCase("no")) {
+          seguirJugado = false;
+        }        
+
+      } else if (manoJugador.getPuntosAcumulados() > 7.5) {
+        System.out.println("Te has pasado");
+        break;
+
+      } else if (manoJugador.getPuntosAcumulados() == 7.5) {
+        System.out.println("Has ganado a la IA");
+
+        haGanadoJugador = true;
       }
     } while (seguirJugado);
 
+    /////////////////////////////
+    //////////TURNO  IA//////////
+    /////////////////////////////
 
+    System.out.println("******************");
+    System.out.println("*     TURNO IA   *");
+    System.out.println("******************");
+
+    
+    //Reiniciamos el turno
+    seguirJugado = true;
+
+    //Barajamos
+    baraja1.barajar();
   }
 }
