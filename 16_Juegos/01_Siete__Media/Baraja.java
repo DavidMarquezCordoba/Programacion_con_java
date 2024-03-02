@@ -1,3 +1,10 @@
+/**
+ * Clase Baraja
+ * 
+ * @author David Márquez Córdoba
+ * @author Enrique Capote Molina
+ */
+
 public class Baraja {
   //El orden es siempre Aributo- constructores -metodos
 
@@ -10,6 +17,7 @@ public class Baraja {
   private Carta [] carta;
   private int numCartas;
   private Carta cartaAuxiliar;
+  private static int posicionCarta = -1;
 
   /////////////////////////////////
   ////////CONSTRUCTORES////////////
@@ -42,9 +50,6 @@ public class Baraja {
     //Declaramos el índice que recorrerá el array carta
     int indice = 0;
 
-    //Mientras que el índice sea menor que el número de cartas inicializadas, continuará obteniendo valores
-    // while (indice < numCartas) { //////BORRADO PORQUE CREO QUE NO HACE FALTA
-
       //Recorremos array a lo largo de palos y valores
       for (int i = 0; i < palos.length; i++) {
         for (int j = 0; j < numeroCarta.length; j++) {
@@ -56,7 +61,6 @@ public class Baraja {
           indice++;
         }
       }
-    // }
   }
 
 
@@ -109,9 +113,9 @@ public class Baraja {
    */
   public Carta extraerCarta(){
 
-    int numAleatorio = (int)(Math.random()*carta.length);
 
-    return carta[numAleatorio];
+    posicionCarta++;
+    return carta[posicionCarta];
     
   }
 

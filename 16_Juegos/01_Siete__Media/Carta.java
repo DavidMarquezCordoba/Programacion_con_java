@@ -1,3 +1,10 @@
+/**
+ * Clase Carta
+ * 
+ * @author David Márquez Córdoba
+ * @author Enrique Capote Molina
+ */
+
 public class Carta {
   //El orden es siempre Aributo- constructores -metodos
 
@@ -27,13 +34,6 @@ public class Carta {
     this.valor = valor;
     
   }
-
-  /**
-   * Constructor por defecto
-   */
-  public Carta(){
-
-  }
   
   /////////////////////////////////
   /////////GETTERS & SETTERS///////
@@ -59,13 +59,5 @@ public class Carta {
     return String.format("%s de %s \tPUNTUACIÓN: %.1f", numero, palo, valor);
   }
   
-  /////////////////////////////////
-  /////////METODOS/////////////////
-  /////////////////////////////////
-
-  // public double valorCarta(Carta carta){
-  //   return 0.5;
-  // }
-
   
 }

@@ -1,3 +1,10 @@
+/**
+ * Clase Jugador
+ * 
+ * @author David Márquez Córdoba
+ * @author Enrique Capote Molina
+ */
+
 public class Jugador {
   //El orden es siempre Aributo- constructores -metodos
 
@@ -8,7 +15,6 @@ public class Jugador {
 
   private int saldo;      //Saldo inicial
   private String nombre;  //Nombre del jugador
-  private int bote;       //Bote acumulado ** no sé si borrarlo
 
 
   /////////////////////////////////
@@ -49,40 +55,20 @@ public class Jugador {
     return nombre;
   }
 
-  public int getBote() {
-    return bote;
-  }
-
   public void setNombre(String nombre) {
     this.nombre = nombre;
   }
 
-  @Override
-  public String toString() {
-    return "Jugador [saldo=" + saldo + ", nombre=" + nombre + ", bote=" + bote + "]";
+  public void setSaldo(int saldo) {
+    this.saldo = saldo;
   }
-  
-  /////////////////////////////////
-  /////////METODOS/////////////////
-  /////////////////////////////////
-  
 
-  // public void acumula(Carta carta){
-    
-  // }
-
-  // public void puntuacionMano (){
-
-  // }
-
-  // public void recibirCartas(){
-
-  // }
-
-  // public void realizarApuesta(){
-    
-  // }
-
+  public void setSaldoGanador(int saldo) {
+    this.saldo += saldo;
+  }
+  public void setSaldoPerdedor(int saldo) {
+    this.saldo -= saldo;
+  }
 
 
 }
