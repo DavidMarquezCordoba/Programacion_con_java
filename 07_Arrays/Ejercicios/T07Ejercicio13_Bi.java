@@ -22,6 +22,9 @@ public class T07Ejercicio13_Bi {
     int min;
     int max; 
     int suma;
+    int sumaDeMedias = 0;
+    int minMedias = Integer.MAX_VALUE;
+    int maxMedias = Integer.MIN_VALUE;
 
     /**
      * 1er For para rellenar cada uno de los huecos
@@ -36,7 +39,7 @@ public class T07Ejercicio13_Bi {
     }
 
     System.out.printf("%67s %3s %3s\n", "MED", "MIN", "MAX");
-
+    System.out.printf("%77s\n", "+-------------+");
     /**
      * 2º For para mostrar los resultados
      */
@@ -64,16 +67,35 @@ public class T07Ejercicio13_Bi {
          */
         if (tabla[i][j] > max) {
           max = tabla [i][j];
-        } else if (tabla[i][j] < min) {
+        } 
+        
+        if (tabla[i][j] < min) {
           min = tabla [i][j];
         }
       }
 
       System.out.printf("%3s", "|");
 
-      System.out.printf("%4d %3d %3d", suma/tabla[0].length, min, max); //suma de cada columna / número columnas
+      int media = suma/tabla[0].length;
+
+      System.out.printf("%4d %3d %3d", media, min, max); //suma de cada columna / número columnas
+
+      System.out.printf(" |");
+
+      sumaDeMedias += media;
+
+      if (max > maxMedias) {
+        maxMedias = max;
+      } 
+      
+      if (min < minMedias) {
+        minMedias = min;
+      }
 
       System.out.println("");
     }
+    System.out.printf("%77s\n", "+-------------+");
+    // System.out.printf("%67s %3s %3s\n", "MED", "MIN", "MAX");
+    System.out.printf("%67d %3d %3d\n", sumaDeMedias/tabla.length, minMedias, maxMedias); //suma de cada columna / número columnas
   }
 }
