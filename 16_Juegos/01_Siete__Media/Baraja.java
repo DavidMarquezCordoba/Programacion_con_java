@@ -118,6 +118,9 @@ public class Baraja {
     return carta[posicionCarta];
     
   }
+  public void cartaReinicia(){
+    posicionCarta = 0;
+  }
 
   /**
    * Muestra el contenido de la carta previamente extraida llamando a un toString directamente desde la clase

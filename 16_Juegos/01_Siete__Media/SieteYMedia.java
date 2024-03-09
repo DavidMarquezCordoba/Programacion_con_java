@@ -131,7 +131,7 @@ public class SieteYMedia {
                 continuar = false;
               } else if (apuesta <= jugador1.getSaldo()) {
                 continuar = true;
-                repetir = true;
+                 repetir = true;
               }
             }
   
@@ -155,6 +155,7 @@ public class SieteYMedia {
   
             //Barajamos de nuevo para la siguiente ronda
             baraja1.barajar();
+            baraja1.cartaReinicia();
             //Reinciamos el contador de turno de IA y jugador
             manoIA.reinicia();
             manoJugador.reinicia();
@@ -279,11 +280,7 @@ public class SieteYMedia {
                   //Valoramos si la IA ha sacado menos puntos que el jugador
                 } else if (manoIA.getPuntosAcumulados() < manoJugador.getPuntosAcumulados()) {
                   seguirJugado = true;
-                  //Valoramos si la IA ha sacado más que el jugador
-                } else if (manoIA.getPuntosAcumulados() > manoJugador.getPuntosAcumulados()) {
-                  seguirJugado = false;
-                  jugador1.setSaldoPerdedor(apuesta);
-                  System.out.println("El crupiere te ha superado , tu nuevo saldo es: " + jugador1.getSaldo() + " puntos.");
+                  
                 } 
               } while (seguirJugado);
             }
@@ -331,11 +328,11 @@ public class SieteYMedia {
       //Mensaje de salida
       System.out.println("Gracias por jugar con nosotros. ¡Hasta pronto!\n");
 
-    } catch (Exception NumberFormatException) {
+    } catch (NumberFormatException e) {
         System.out.println("");
         System.out.println("ERROR - Solo pueden introducirse números."); 
-        System.out.println("Clase de error - "+ NumberFormatException.getClass());
-        System.out.println("Mensaje de error - "+NumberFormatException.getMessage());
+        System.out.println("Clase de error - "+ e.getClass());
+        System.out.println("Mensaje de error - "+e.getMessage());
       } finally {
         System.out.println("");
         System.out.println("Hasta luego");
