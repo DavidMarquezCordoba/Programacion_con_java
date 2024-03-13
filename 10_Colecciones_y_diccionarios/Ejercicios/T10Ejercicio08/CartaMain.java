@@ -12,26 +12,27 @@ almacenarlas y asegúrate de que no se repite ninguna.
 public class CartaMain {
   public static void main(String[] args) {
     
+    
+    //Creamos la colección
     ArrayList<Carta> baraja = new ArrayList<Carta>();
 
-    
-    // Carta c;
-    //Creamos una primera carta
+    //Creamos una primera carta, esta se inicializará con un palo y valor aleatorio
     Carta carta = new Carta();
 
+    
     //Añadimos a la primera posición la primera carta creada
     baraja.add(carta);
 
-    // System.out.println(carta);
 
-    //Hasta 8 porque la primera ya la hemos creado antes
+    //Hasta 9 porque la primera ya la hemos creado antes
     for (int i = 0; i < 9; i++) {
+      //Repite el proceso de crear carta nueva hasta que su valor y palo sean distintos
       do {
         carta = new Carta();
       } while (baraja.contains(carta));
 
       baraja.add(carta);
-      // System.out.println(carta);
+      
     }
 
     for (Carta elemento : baraja) {
@@ -40,3 +41,10 @@ public class CartaMain {
 
   }
 }
+
+
+//DUDA
+/**
+ * Se repite valor y palo de esta forma
+ */
+

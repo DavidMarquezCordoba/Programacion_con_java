@@ -18,26 +18,45 @@ public class Carta {
   private String palo;
   private String valor;
 
+  /**
+   * Constructor por defecto
+   */
   public Carta(){
-    this.palo = palos[(int)(Math.random()*2)];
+    this.palo = palos[(int)(Math.random()*palos.length)];
     this.valor = numero[(int)(Math.random()*numero.length)];
   }
 
+  /**
+   * Getter del Palo, para mostrarlo en el main
+   * @return String del valor del palo de la carta creada
+   */
   public String getPalo() {
     return palo;
   }
 
+  /**
+   * Getter del valor, se mostrará en el main
+   * @return String del valor de la carta
+   */
   public String getValor() {
     return valor;
   }
 
+  /**
+   * Método toString que muestra el valor y el palo conjuntamente
+   */
   @Override
   public String toString() {
     return valor + " de " + palo;
   }
 
 
-  public boolean equals(Carta x){
+  /**
+   * Compara el palo y el valor de la carta creada y la que se pasa por parámetro
+   * @param x Objeto de tipo Carta a comparar
+   * @return true si son iguales (palo,valor) o false si no lo es
+   */
+  public boolean iguales(Carta x){
     if (this.getPalo().equals(x.getPalo()) && this.getValor().equals(x.getValor())) {
       return true;
     } else {
