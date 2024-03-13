@@ -1,7 +1,6 @@
 package T10Ejercicio09;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Realiza un programa que escoja al azar 10 cartas de la baraja española
@@ -18,34 +17,42 @@ coincida el palo, se ordenará por número: as, 2, 3, 4, 5, 6, 7, sota, caballo,
 public class CartaMain {
   public static void main(String[] args) {
     
-    ArrayList<Carta> carta = new ArrayList<Carta>();
+    /**
+     * NO ESTÁ TERMINADO!! no sé ordenar bien.
+     */
+    ArrayList<Carta> baraja = new ArrayList<Carta>();
 
     
-    Carta c;
+    Carta carta;
     //Creamos una primera carta
-    c = new Carta();
+    carta = new Carta();
 
     //Añadimos a la primera posición la primera carta creada
-    carta.add(c);
+    baraja.add(carta);
 
     // System.out.println(carta);
 
     //Hasta 8 porque la primera ya la hemos creado antes
     for (int i = 0; i < 9; i++) {
       do {
-        c = new Carta();
-      } while (carta.contains(c));
+        carta = new Carta();
+      } while (baraja.contains(carta));
 
-      carta.add(c);
+      baraja.add(carta);
       // System.out.println(carta);
     }
 
     //Lista desordenada
     System.out.println("Lista desordenada: \n");
-    for (Carta elemento : carta) {
+    for (Carta elemento : baraja) {
       System.out.println(elemento);
     }
 
-    Collections.sort(c);
+    Collections.sort(baraja);
+
+    System.out.println("\nLista ordenada: \n");
+    for (Carta elemento : baraja) {
+      System.out.println(elemento);
+    }
   }
 }

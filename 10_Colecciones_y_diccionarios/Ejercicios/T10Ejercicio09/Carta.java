@@ -42,8 +42,11 @@ public class Carta implements Comparable<Carta>{
 
   @Override
   public int compareTo(Carta o) {
-    
+
+    return this.palo.compareTo(o.getPalo());
   }
+
+  
 
 
 }
