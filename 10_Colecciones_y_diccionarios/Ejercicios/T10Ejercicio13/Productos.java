@@ -11,14 +11,14 @@ public class Productos {
   ///CONSTRUCTORES
   public Productos(){
     this.codigo = "vacio";
-    this.stock=0;
+    this.stock=1;
   }
 
   public Productos(String codigo, String descripcion, double precio) {
     this.codigo = codigo;
     this.descripcion = descripcion;
     this.precio = precio;
-    stock++;
+    this.stock = 1;
   }
 
   ///GETTERS Y SETTERS
@@ -71,10 +71,10 @@ public class Productos {
     stock--;
   }
 
-  public void eliminarProducto(){
-    this.codigo = "vacio";
-    this.descripcion = null;
-    this.precio = 0;
-    this.stock = 0;
-  }
+  // public void eliminarProducto(){
+  //   this.codigo = "vacio";
+  //   this.descripcion = null;
+  //   this.precio = 0;
+  //   this.stock = 0;
+  // }
 }

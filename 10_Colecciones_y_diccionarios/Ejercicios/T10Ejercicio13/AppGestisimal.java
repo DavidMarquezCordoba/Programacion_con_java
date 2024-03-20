@@ -23,8 +23,11 @@ import java.util.ArrayList;
 public class AppGestisimal {
   public static void main(String[] args) {
     //Variables
+
+    final int MAX = 3;
+    int indiceMax = 0;
+
     int opcionMenuPpal;
-    int indiceListado = 0;
     String codigo;
     String descripcion;
     double precio;
@@ -33,9 +36,9 @@ public class AppGestisimal {
     int opcionModificar;
 
     int index = 1;
-    int posicionProducto;
-    Productos producto = null;
-    
+    boolean estaElProducto = false;
+    boolean codigoExistente = false;
+
     ArrayList<Productos> almacen = new ArrayList<Productos>();
     
     System.out.println("\nBienvenidos a la tienda Alan Turing");
@@ -48,12 +51,6 @@ public class AppGestisimal {
     System.out.println("...");
     System.out.println("..");
     System.out.println(".");
-
-    // Productos [] almacen = new Productos[100];
-
-    // for (int i = 0; i < almacen.length; i++) {
-    //   almacen[i] = new Productos();
-    // }
 
     System.out.println("¡Listo!\n");
 
@@ -101,42 +98,80 @@ public class AppGestisimal {
          */
         case 2:
 
-          System.out.println("\nNuevo producto");
-          System.out.println("--------------------------\n");
-          producto = new Productos();
+          if (indiceMax>=MAX) {
 
-          System.out.print("Código de producto: ");
-          codigo = System.console().readLine();
-          producto.setCodigo(codigo);
-          
-          System.out.print("Descripción del producto: ");
-          descripcion = System.console().readLine();
-          producto.setDescripcion(descripcion);
+            System.out.println("\nAlmacén lleno. !Ya no caben más productos¡");
 
-          System.out.print("Precio/u: ");
-          precio = Double.parseDouble(System.console().readLine());
-          producto.setPrecio(precio);
-          
-          almacen.add(producto);
+          } else {
+
+            System.out.println("\nNuevo producto");
+            System.out.println("--------------------------\n");            
+            System.out.print("Código de producto: ");
+            codigo = System.console().readLine();
+
+            codigoExistente = false;
+
+            for (Productos productos : almacen) {
+              if ((productos.getCodigo().equals(codigo))) {
+                System.out.println("El producto ya existe");
+                codigoExistente = true;
+                break;
+              } 
+            }  
+
+            if (!codigoExistente){
+
+              if (indiceMax < MAX) {
+                Productos producto = new Productos();
+                producto.setCodigo(codigo);
+                
+                System.out.print("Descripción del producto: ");
+                descripcion = System.console().readLine();
+                producto.setDescripcion(descripcion);
+
+                System.out.print("Precio/u: ");
+                precio = Double.parseDouble(System.console().readLine());
+                producto.setPrecio(precio);
+                
+                almacen.add(producto);
+                System.out.println("\n¡Producto agregado con éxito!");
+                indiceMax++;  
+
+                if (indiceMax == MAX) {
+                  System.out.println("\nHa llegado al límite de productos");
+                }
+              }
+            }  
+          }
 
           break;
-
 
         /**
          * Baja de un producto
          */
         case 3:
 
-          System.out.println("Eliminar producto");
+          System.out.println("\nEliminar producto");
           System.out.println("---------------------------\n");
           System.out.println("¿Qué producto desea dar de baja?");
-          System.out.print("Introduzca código de producto: ");
+          System.out.print("\nIntroduzca código de producto: ");
           codigoAEliminar = System.console().readLine();
 
-          if (almacen.contains(codigoAEliminar)) {
-            almacen.remove(almacen.indexOf(producto.getCodigo().equals(codigoAEliminar)));
-          } else {
-            System.out.println("\nProducto no encontrado\n");
+          codigoExistente = false;
+          estaElProducto = false;
+
+          for (Productos productoEliminar : almacen) {
+            if (productoEliminar.getCodigo().equals(codigoAEliminar)) {
+              almacen.remove(productoEliminar);
+              indiceMax--;
+              System.out.println("\n¡Borrado con éxito!");
+              estaElProducto = true;
+              break;
+            }
+          }
+
+          if (!estaElProducto) {
+            System.out.println("\nEl producto NO se encuentra en el almacen");
           }
 
           break;
@@ -153,50 +188,57 @@ public class AppGestisimal {
           System.out.print("Introduzca el código del producto: ");
           codigoAModificar = System.console().readLine();
 
-          if (almacen.contains(codigoAModificar)) {
-            do {
-              //Pedimos datos que desea modificar
-              System.out.println("\n¿Qué desea modificar?");
-              System.out.println("1. Código");
-              System.out.println("2. Descripción");
-              System.out.println("3. Precio");
-              System.out.println("4. Atrás\n");
+          estaElProducto = false;
 
-              System.out.print("Elija una opción (1-4): ");
-              opcionModificar = Integer.parseInt(System.console().readLine());    
-              
-              switch (opcionModificar) {
-                case 1:
-                  System.out.print("\nCódigo de producto: ");
-                  codigo = System.console().readLine(); 
-                  
-                  posicionProducto = almacen.indexOf(almacen.contains(codigoAModificar));
+          for (Productos productos : almacen) {
+            if (productos.getCodigo().equals(codigoAModificar)) {
 
-                  // almacen.set(posicionProducto, producto.setCodigo(codigo));
-                  // almacen.contains(producto.getCodigo().equals(codigoAModificar));
+              estaElProducto = true;
 
+              do {
+                //Pedimos datos que desea modificar
+                System.out.println("\n¿Qué desea modificar?");
+                System.out.println("1. Código");
+                System.out.println("2. Descripción");
+                System.out.println("3. Precio");
+                System.out.println("4. Atrás\n");
+  
+                System.out.print("Elija una opción (1-4): ");
+                opcionModificar = Integer.parseInt(System.console().readLine());    
+                
+                switch (opcionModificar) {
+                  case 1:
+                    System.out.print("\nCódigo de producto: ");
+                    codigo = System.console().readLine(); 
+                    
+                    productos.setCodigo(codigo);
+  
+                    break;
+                
+                  case 2:
+                    System.out.print("\nDescripción del producto: ");
+                    descripcion = System.console().readLine();
+                    
+                    productos.setDescripcion(descripcion);
+                    break;
+  
+                  case 3:
+                    System.out.print("\nPrecio/u: ");
+                    precio = Double.parseDouble(System.console().readLine()); 
+                    
+                    productos.setPrecio(precio);
+                    break;
+  
+                  default:
+                    System.out.println("Opción no válida");
+                    break;
+                }
+              } while (opcionModificar!=4);
+            }
+          }
 
-                  break;
-              
-                case 2:
-                  System.out.print("\nDescripción del producto: ");
-                  descripcion = System.console().readLine();
-                  
-                  break;
-
-                case 3:
-                  System.out.print("\nPrecio/u: ");
-                  precio = Double.parseDouble(System.console().readLine()); 
-                  
-                  break;
-
-                default:
-                  break;
-              }
-            } while (opcionModificar!=4);
-
-          } else {
-            
+          if (!estaElProducto) {
+            System.out.println("El producto no se encuentra en el almacen, por lo que no se podrá modificar nada.");
           }
 
           break;
@@ -207,18 +249,26 @@ public class AppGestisimal {
          */
         case 5:
 
-        System.out.println("\nEntrada mercancia");
-        System.out.println("--------------------------\n");
+          estaElProducto = false;
 
-        System.out.print("Código de producto: ");
-        codigo = System.console().readLine();
+          System.out.println("\nEntrada mercancia");
+          System.out.println("--------------------------\n");
 
-        // for (int j = 0; j < almacen.length; j++) {
-        //   if ((almacen[j].getCodigo().equals(codigo))) {
-        //     almacen[j].sumarStock();
-        //   }
-        // }
-          
+          System.out.print("Código de producto: ");
+          codigo = System.console().readLine();
+
+          for (Productos productos : almacen) {
+            if (productos.getCodigo().equals(codigo)) {
+              productos.sumarStock();
+              estaElProducto=true;
+              break;
+            }
+          }
+
+          if (!estaElProducto) {
+            System.out.println("\nProducto no encontrado");
+          }
+
           break;
 
 
@@ -227,22 +277,30 @@ public class AppGestisimal {
          */
         case 6:
 
-        System.out.println("\nSalida mercancia");
-        System.out.println("--------------------------\n");
+          estaElProducto = false;
+        
+          System.out.println("\nSalida mercancia");
+          System.out.println("--------------------------\n");
 
-        System.out.print("Código de producto: ");
-        codigo = System.console().readLine();
+          System.out.print("Código de producto: ");
+          codigo = System.console().readLine();
 
-        // for (int j = 0; j < almacen.length; j++) {
-        //   if ((almacen[j].getCodigo().equals(codigo))) {
-        //     almacen[j].restarStock();
-        //   }
-        // }
-          
+          for (Productos productos : almacen) {
+            if (productos.getCodigo().equals(codigo)) {
+              productos.restarStock();
+              estaElProducto=true;
+              break;
+            }
+          }
+
+          if (!estaElProducto) {
+            System.out.println("\nProducto no encontrado");
+          }
           break;
 
 
         default:
+          System.out.println("\nOpción no válida");
           break;
 
       }
