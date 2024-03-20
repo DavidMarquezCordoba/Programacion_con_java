@@ -15,11 +15,11 @@ public class ArrayList12 {
     ArrayList<Gato> g = new ArrayList<Gato>();
 
     //Creamos objetos de tipo gato
-    g.add(new Gato("Garfield", "naranja", "mestizo"));
-    g.add(new Gato("Pepe", "gris", "angora"));
-    g.add(new Gato("Mauri", "blanco", "manx"));
-    g.add(new Gato("Ulises", "marrón", "persa"));
-    g.add(new Gato("Adán", "negro", "angora"));
+    g.add(new Gato("Garfield", "naranja", "mestizo", 2 ));
+    g.add(new Gato("Pepe", "gris", "angora", 1));
+    g.add(new Gato("Mauri", "blanco", "manx", 5));
+    g.add(new Gato("Ulises", "marrón", "persa", 9));
+    g.add(new Gato("Adán", "negro", "angora", 11));
 
     //Lista desordenada por nombre
     for (Gato gatos : g) {

@@ -9,7 +9,7 @@ public class Gato implements Comparable<Gato>{
   String color;
   String raza;
   // String sexo;
-  // int edad;
+  int edad;
   // double peso;
 
   // CONSTRUCTORES
@@ -29,7 +29,7 @@ public class Gato implements Comparable<Gato>{
   // }
 
   //Constructor para ejemplo de ArrayLIst
-  Gato(String nombre, String color, String raza) {
+  Gato(String nombre, String color, String raza, int edad) {
     this.nombre = nombre;
     this.color = color;
     this.raza = raza;
@@ -48,6 +48,9 @@ public class Gato implements Comparable<Gato>{
     return raza;
   }
 
+  public int getEdad() {
+    return edad;
+  }
   // METODOS
 
   void maulla() {
@@ -94,7 +97,8 @@ public class Gato implements Comparable<Gato>{
 
   @Override
   public int compareTo(Gato o) {
-    return (this.raza).compareTo(o.getRaza());
+    return Integer.compare(this.edad, o.getEdad());
+    // return (this.edad).compareTo(o.getEdad());
   }
   ///////////////
 
